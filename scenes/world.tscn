@@ -1,5 +1,6 @@
-[gd_scene load_steps=56 format=3 uid="uid://bvvre0p6auulq"]
+[gd_scene load_steps=99 format=3 uid="uid://bvvre0p6auulq"]
 
+[ext_resource type="PackedScene" uid="uid://ds8jitdfn8yuj" path="res://assets/path.tscn" id="1_y7dbq"]
 [ext_resource type="Script" path="res://addons/proton_scatter/src/scatter.gd" id="2_2fi15"]
 [ext_resource type="Script" path="res://addons/proton_scatter/src/stack/modifier_stack.gd" id="3_lrtom"]
 [ext_resource type="Script" path="res://addons/proton_scatter/src/modifiers/create_inside_random.gd" id="4_pmtu5"]
@@ -9,29 +10,29 @@
 [ext_resource type="Script" path="res://addons/proton_scatter/src/scatter_item.gd" id="8_vlah3"]
 [ext_resource type="Script" path="res://addons/proton_scatter/src/scatter_shape.gd" id="9_rqlbq"]
 [ext_resource type="Script" path="res://addons/proton_scatter/src/shapes/path_shape.gd" id="10_5hqlx"]
-[ext_resource type="PackedScene" uid="uid://hxhq06jds1l0" path="res://assets/landscape.tscn" id="10_onw66"]
+[ext_resource type="PackedScene" uid="uid://hxhq06jds1l0" path="res://assets/landscape.tscn" id="10_8bn4f"]
 
-[sub_resource type="Resource" id="Resource_usj7b"]
+[sub_resource type="Resource" id="Resource_xfege"]
 script = ExtResource("4_pmtu5")
-amount = 15000
-enabled = false
+amount = 10000
+enabled = true
 override_global_seed = false
 custom_seed = 0
 restrict_height = true
 reference_frame = 1
 
-[sub_resource type="Resource" id="Resource_uscqo"]
+[sub_resource type="Resource" id="Resource_0fofl"]
 script = ExtResource("5_e3ik2")
 position = Vector3(0, 0, 0)
 rotation = Vector3(10, 360, 10)
-scale = Vector3(0.2, 0.3, 0.2)
+scale = Vector3(0.4, 0.7, 0.4)
 enabled = true
 override_global_seed = false
 custom_seed = 0
 restrict_height = false
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_2ncg8"]
+[sub_resource type="Resource" id="Resource_ukpmk"]
 script = ExtResource("6_00q1u")
 iterations = 3
 offset_step = 0.2
@@ -43,7 +44,7 @@ custom_seed = 0
 restrict_height = true
 reference_frame = 0
 
-[sub_resource type="Resource" id="Resource_4knof"]
+[sub_resource type="Resource" id="Resource_lgfek"]
 script = ExtResource("7_es4q7")
 ray_direction = Vector3(-5, -5, -5)
 ray_length = 50.0
@@ -59,9 +60,9 @@ custom_seed = 0
 restrict_height = false
 reference_frame = 0
 
-[sub_resource type="Resource" id="Resource_nx875"]
+[sub_resource type="Resource" id="Resource_21ie8"]
 script = ExtResource("3_lrtom")
-stack = Array[Resource("res://addons/proton_scatter/src/modifiers/base_modifier.gd")]([SubResource("Resource_usj7b"), SubResource("Resource_uscqo"), SubResource("Resource_2ncg8"), SubResource("Resource_4knof")])
+stack = Array[Resource("res://addons/proton_scatter/src/modifiers/base_modifier.gd")]([SubResource("Resource_xfege"), SubResource("Resource_0fofl"), SubResource("Resource_ukpmk"), SubResource("Resource_lgfek")])
 
 [sub_resource type="Curve3D" id="Curve3D_dsvge"]
 _data = {
@@ -89,27 +90,27 @@ closed = true
 thickness = 0.0
 curve = SubResource("Curve3D_vaf3e")
 
-[sub_resource type="Resource" id="Resource_1t51e"]
+[sub_resource type="Resource" id="Resource_nymaq"]
 script = ExtResource("4_pmtu5")
-amount = 15000
+amount = 10000
 enabled = true
 override_global_seed = false
 custom_seed = 0
 restrict_height = true
 reference_frame = 1
 
-[sub_resource type="Resource" id="Resource_wo6fd"]
+[sub_resource type="Resource" id="Resource_262gp"]
 script = ExtResource("5_e3ik2")
 position = Vector3(0, 0, 0)
 rotation = Vector3(10, 360, 10)
-scale = Vector3(0.2, 0.3, 0.2)
+scale = Vector3(0.7, 0.7, 0.7)
 enabled = true
 override_global_seed = false
 custom_seed = 0
 restrict_height = false
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_u8kwj"]
+[sub_resource type="Resource" id="Resource_8syia"]
 script = ExtResource("6_00q1u")
 iterations = 3
 offset_step = 0.2
@@ -121,7 +122,7 @@ custom_seed = 0
 restrict_height = true
 reference_frame = 0
 
-[sub_resource type="Resource" id="Resource_qan0h"]
+[sub_resource type="Resource" id="Resource_16n7g"]
 script = ExtResource("7_es4q7")
 ray_direction = Vector3(-5, -5, -5)
 ray_length = 50.0
@@ -137,9 +138,9 @@ custom_seed = 0
 restrict_height = false
 reference_frame = 0
 
-[sub_resource type="Resource" id="Resource_ttquo"]
+[sub_resource type="Resource" id="Resource_751c5"]
 script = ExtResource("3_lrtom")
-stack = Array[Resource("res://addons/proton_scatter/src/modifiers/base_modifier.gd")]([SubResource("Resource_1t51e"), SubResource("Resource_wo6fd"), SubResource("Resource_u8kwj"), SubResource("Resource_qan0h")])
+stack = Array[Resource("res://addons/proton_scatter/src/modifiers/base_modifier.gd")]([SubResource("Resource_nymaq"), SubResource("Resource_262gp"), SubResource("Resource_8syia"), SubResource("Resource_16n7g")])
 
 [sub_resource type="Curve3D" id="Curve3D_c4hqs"]
 _data = {
@@ -167,7 +168,7 @@ closed = true
 thickness = 0.0
 curve = SubResource("Curve3D_u67o3")
 
-[sub_resource type="Resource" id="Resource_ekvb2"]
+[sub_resource type="Resource" id="Resource_mnogy"]
 script = ExtResource("4_pmtu5")
 amount = 1000
 enabled = true
@@ -176,7 +177,7 @@ custom_seed = 0
 restrict_height = true
 reference_frame = 1
 
-[sub_resource type="Resource" id="Resource_h7y45"]
+[sub_resource type="Resource" id="Resource_mh0ux"]
 script = ExtResource("5_e3ik2")
 position = Vector3(0, 0, 0)
 rotation = Vector3(10, 360, 10)
@@ -187,7 +188,7 @@ custom_seed = 0
 restrict_height = false
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_3un4s"]
+[sub_resource type="Resource" id="Resource_h65ed"]
 script = ExtResource("6_00q1u")
 iterations = 3
 offset_step = 0.2
@@ -199,7 +200,7 @@ custom_seed = 0
 restrict_height = true
 reference_frame = 0
 
-[sub_resource type="Resource" id="Resource_ke3au"]
+[sub_resource type="Resource" id="Resource_t6w5w"]
 script = ExtResource("7_es4q7")
 ray_direction = Vector3(-5, -5, -5)
 ray_length = 50.0
@@ -215,9 +216,9 @@ custom_seed = 0
 restrict_height = false
 reference_frame = 0
 
-[sub_resource type="Resource" id="Resource_mp1j8"]
+[sub_resource type="Resource" id="Resource_17i1l"]
 script = ExtResource("3_lrtom")
-stack = Array[Resource("res://addons/proton_scatter/src/modifiers/base_modifier.gd")]([SubResource("Resource_ekvb2"), SubResource("Resource_h7y45"), SubResource("Resource_3un4s"), SubResource("Resource_ke3au")])
+stack = Array[Resource("res://addons/proton_scatter/src/modifiers/base_modifier.gd")]([SubResource("Resource_mnogy"), SubResource("Resource_mh0ux"), SubResource("Resource_h65ed"), SubResource("Resource_t6w5w")])
 
 [sub_resource type="Curve3D" id="Curve3D_ggfpw"]
 _data = {
@@ -245,27 +246,27 @@ closed = true
 thickness = 0.0
 curve = SubResource("Curve3D_mmhnn")
 
-[sub_resource type="Resource" id="Resource_0knbd"]
+[sub_resource type="Resource" id="Resource_s8cre"]
 script = ExtResource("4_pmtu5")
-amount = 400
+amount = 300
 enabled = true
-override_global_seed = false
-custom_seed = 0
+override_global_seed = true
+custom_seed = 4
 restrict_height = true
 reference_frame = 1
 
-[sub_resource type="Resource" id="Resource_tqw4y"]
+[sub_resource type="Resource" id="Resource_oxu5w"]
 script = ExtResource("5_e3ik2")
 position = Vector3(0, 0, 0)
-rotation = Vector3(10, 360, 10)
-scale = Vector3(0.1, 0.1, 0.1)
+rotation = Vector3(5, 360, 5)
+scale = Vector3(-0.3, -0.3, -0.3)
 enabled = true
 override_global_seed = false
 custom_seed = 0
 restrict_height = false
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_h5fyt"]
+[sub_resource type="Resource" id="Resource_p5xoi"]
 script = ExtResource("6_00q1u")
 iterations = 3
 offset_step = 0.2
@@ -277,13 +278,13 @@ custom_seed = 0
 restrict_height = true
 reference_frame = 0
 
-[sub_resource type="Resource" id="Resource_usjyg"]
+[sub_resource type="Resource" id="Resource_1v71o"]
 script = ExtResource("7_es4q7")
 ray_direction = Vector3(-5, -5, -5)
 ray_length = 50.0
 ray_offset = 20.0
 remove_points_on_miss = false
-align_with_collision_normal = true
+align_with_collision_normal = false
 max_slope = 90.0
 collision_mask = 1
 exclude_mask = 0
@@ -293,13 +294,13 @@ custom_seed = 0
 restrict_height = false
 reference_frame = 0
 
-[sub_resource type="Resource" id="Resource_bnuyg"]
+[sub_resource type="Resource" id="Resource_we2fk"]
 script = ExtResource("3_lrtom")
-stack = Array[Resource("res://addons/proton_scatter/src/modifiers/base_modifier.gd")]([SubResource("Resource_0knbd"), SubResource("Resource_tqw4y"), SubResource("Resource_h5fyt"), SubResource("Resource_usjyg")])
+stack = Array[Resource("res://addons/proton_scatter/src/modifiers/base_modifier.gd")]([SubResource("Resource_s8cre"), SubResource("Resource_oxu5w"), SubResource("Resource_p5xoi"), SubResource("Resource_1v71o")])
 
-[sub_resource type="Curve3D" id="Curve3D_6d3s6"]
+[sub_resource type="Curve3D" id="Curve3D_rydom"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -39.0854, 0, 167.521, 0, 0, 0, 0, 0, 0, -37.8271, 0, 164.669, 0, 0, 0, 0, 0, 0, -36.5687, 0, 162.111, 0, 0, 0, 0, 0, 0, -34.7689, 0, 158.113, 0, 0, 0, 0, 0, 0, -33.3369, 0, 153.836, 0, 0, 0, 0, 0, 0, -33.1271, 0, 151.361, 0, 0, 0, 0, 0, 0, -32.8028, 0, 148.033, 0, 0, 0, 0, 0, 0, -32.0897, 0, 146.104, 0, 0, 0, 0, 0, 0, -29.7148, 0, 143.614, 0, 0, 0, 0, 0, 0, -27.3658, 0, 141.727, 0, 0, 0, 0, 0, 0, -25.8139, 0, 141.097, 0, 0, 0, 0, 0, 0, -22.5421, 0, 140.301, 0, 0, 0, 0, 0, 0, -19.522, 0, 140.091, 0, 0, 0, 0, 0, 0, -17.5087, 0, 140.259, 0, 0, 0, 0, 0, 0, -15.3132, 0, 141.179, 0, 0, 0, 0, 0, 0, -13.8032, 0, 142.479, 0, 0, 0, 0, 0, 0, -12.2512, 0, 144.241, 0, 0, 0, 0, 0, 0, -10.3217, 0, 146.212, 0, 0, 0, 0, 0, 0, -8.10628, 0, 147.068, 0, 0, 0, 0, 0, 0, -5.92512, 0, 147.906, 0, 0, 0, 0, 0, 0, -2.61144, 0, 148.578, 0, 0, 0, 0, 0, 0, 0.366682, 0, 148.494, 0, 0, 0, 0, 0, 0, 4.17703, 0, 148.268, 0, 0, 0, 0, 0, 0, 7.23903, 0, 147.345, 0, 0, 0, 0, 0, 0, 10.2591, 0, 145.416, 0, 0, 0, 0, 0, 0, 13.1775, 0, 142.941, 0, 0, 0, 0, 0, 0, 15.2748, 0, 139.879, 0, 0, 0, 0, 0, 0, 16.7009, 0, 136.188, 0, 0, 0, 0, 0, 0, 16.7197, 0, 132.78, 0, 0, 0, 0, 0, 0, 16.3003, 0, 130.263, 0, 0, 0, 0, 0, 0, 16.2433, 0, 127.066, 0, 0, 0, 0, 0, 0, 16.6182, 0, 123.275, 0, 0, 0, 0, 0, 0, 17.2108, 0, 118.709, 0, 0, 0, 0, 0, 0, 18.53, 0, 115.312, 0, 0, 0, 0, 0, 0, 48.493, 0, 128.645, 0, 0, 0, 0, 0, 0, 29.5715, 0, 171.866, 0, 0, 0, 0, 0, 0, -14.5917, 0, 169.853),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -39.0854, 0, 167.521, 0, 0, 0, 0, 0, 0, -37.8271, 0, 164.669, 0, 0, 0, 0, 0, 0, -36.5687, 0, 162.111, 0, 0, 0, 0, 0, 0, -34.7689, 0, 158.113, 0, 0, 0, 0, 0, 0, -33.3369, 0, 153.836, 0, 0, 0, 0, 0, 0, -33.1271, 0, 151.361, 0, 0, 0, 0, 0, 0, -32.8028, 0, 148.033, 0, 0, 0, 0, 0, 0, -32.0897, 0, 146.104, 0, 0, 0, 0, 0, 0, -29.7148, 0, 143.614, 0, 0, 0, 0, 0, 0, -27.3658, 0, 141.727, 0, 0, 0, 0, 0, 0, -25.8139, 0, 141.097, 0, 0, 0, 0, 0, 0, -22.5421, 0, 140.301, 0, 0, 0, 0, 0, 0, -19.522, 0, 140.091, 0, 0, 0, 0, 0, 0, -17.5087, 0, 140.259, 0, 0, 0, 0, 0, 0, -15.3132, 0, 141.179, 0, 0, 0, 0, 0, 0, -13.8032, 0, 142.479, 0, 0, 0, 0, 0, 0, -12.2512, 0, 144.241, 0, 0, 0, 0, 0, 0, -10.3217, 0, 146.212, 0, 0, 0, 0, 0, 0, -8.10628, 0, 147.068, 0, 0, 0, 0, 0, 0, -5.92512, 0, 147.906, 0, 0, 0, 0, 0, 0, -2.61144, 0, 148.578, 0, 0, 0, 0, 0, 0, 0.366682, 0, 148.494, 0, 0, 0, 0, 0, 0, 4.17703, 0, 148.268, 0, 0, 0, 0, 0, 0, 7.23903, 0, 147.345, 0, 0, 0, 0, 0, 0, 10.2591, 0, 145.416, 0, 0, 0, 0, 0, 0, 13.1775, 0, 142.941, 0, 0, 0, 0, 0, 0, 15.2748, 0, 139.879, 0, 0, 0, 0, 0, 0, 16.7009, 0, 136.188, 0, 0, 0, 0, 0, 0, 16.7197, 0, 132.78, 0, 0, 0, 0, 0, 0, 16.3003, 0, 130.263, 0, 0, 0, 0, 0, 0, 16.2433, 0, 127.066, 0, 0, 0, 0, 0, 0, 16.6182, 0, 123.275, 0, 0, 0, 0, 0, 0, 17.2108, 0, 118.709, 0, 0, 0, 0, 0, 0, 19.2242, 0, 115.647, 0, 0, 0, 0, 0, 0, 67.1345, 0, 136.814, 0, 0, 0, 0, 0, 0, 46.3556, 0, 177.738, 0, 0, 0, 0, 0, 0, -8.75268, 0, 182.099),
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 }
 point_count = 37
@@ -308,11 +309,11 @@ point_count = 37
 script = ExtResource("10_5hqlx")
 closed = true
 thickness = 0.0
-curve = SubResource("Curve3D_6d3s6")
+curve = SubResource("Curve3D_rydom")
 
-[sub_resource type="Curve3D" id="Curve3D_dr8r8"]
+[sub_resource type="Curve3D" id="Curve3D_rneay"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -40.9341, 0, 167.227, 0, 0, 0, 0, 0, 0, -39.3547, 0, 163.733, 0, 0, 0, 0, 0, 0, -37.2967, 0, 159.521, 0, 0, 0, 0, 0, 0, -35.6216, 0, 155.597, 0, 0, 0, 0, 0, 0, -34.8969, 0, 153.014, 0, 0, 0, 0, 0, 0, -34.7054, 0, 148.85, 0, 0, 0, 0, 0, 0, -34.179, 0, 146.074, 0, 0, 0, 0, 0, 0, -32.4257, 0, 143.568, 0, 0, 0, 0, 0, 0, -29.8413, 0, 141.223, 0, 0, 0, 0, 0, 0, -26.5389, 0, 139.548, 0, 0, 0, 0, 0, 0, -22.6777, 0, 138.344, 0, 0, 0, 0, 0, 0, -19.519, 0, 138.392, 0, 0, 0, 0, 0, 0, -16.6952, 0, 138.727, 0, 0, 0, 0, 0, 0, -14.0198, 0, 140.057, 0, 0, 0, 0, 0, 0, -11.7684, 0, 142.098, 0, 0, 0, 0, 0, 0, -9.93911, 0, 143.892, 0, 0, 0, 0, 0, 0, -7.30071, 0, 145.581, 0, 0, 0, 0, 0, 0, -4.09037, 0, 146.562, 0, 0, 0, 0, 0, 0, -0.502157, 0, 146.808, 0, 0, 0, 0, 0, 0, 2.87499, 0, 146.773, 0, 0, 0, 0, 0, 0, 6.39067, 0, 144.998, 0, 0, 0, 0, 0, 0, 8.82547, 0, 143.736, 0, 0, 0, 0, 0, 0, 11.5196, 0, 141.566, 0, 0, 0, 0, 0, 0, 13.0708, 0, 139.204, 0, 0, 0, 0, 0, 0, 13.7511, 0, 137.145, 0, 0, 0, 0, 0, 0, 14.0626, 0, 134.271, 0, 0, 0, 0, 0, 0, 14.2771, 0, 131.104, 0, 0, 0, 0, 0, 0, 14.3703, 0, 127.691, 0, 0, 0, 0, 0, 0, 13.9481, 0, 124.173, 0, 0, 0, 0, 0, 0, 14.227, 0, 119.787, 0, 0, 0, 0, 0, 0, 15.1416, 0, 117.395, 0, 0, 0, 0, 0, 0, 17.2172, 0, 114.264, 0, 0, 0, 0, 0, 0, 1.34986, 7.62939e-06, 107.737, 0, 0, 0, 0, 0, 0, -11.5592, 3.8147e-06, 102.815, 0, 0, 0, 0, 0, 0, -21.956, 0, 103.836, 0, 0, 0, 0, 0, 0, -35.4123, 0, 112.34, 0, 0, 0, 0, 0, 0, -51.0921, 0, 124.856, 0, 0, 0, 0, 0, 0, -56.0299, 0, 156.19),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -40.9341, 0, 167.227, 0, 0, 0, 0, 0, 0, -39.3547, 0, 163.733, 0, 0, 0, 0, 0, 0, -37.2967, 0, 159.521, 0, 0, 0, 0, 0, 0, -35.6216, 0, 155.597, 0, 0, 0, 0, 0, 0, -34.8969, 0, 153.014, 0, 0, 0, 0, 0, 0, -34.7054, 0, 148.85, 0, 0, 0, 0, 0, 0, -34.179, 0, 146.074, 0, 0, 0, 0, 0, 0, -32.4257, 0, 143.568, 0, 0, 0, 0, 0, 0, -29.8413, 0, 141.223, 0, 0, 0, 0, 0, 0, -26.5389, 0, 139.548, 0, 0, 0, 0, 0, 0, -22.6777, 0, 138.344, 0, 0, 0, 0, 0, 0, -19.519, 0, 138.392, 0, 0, 0, 0, 0, 0, -16.6952, 0, 138.727, 0, 0, 0, 0, 0, 0, -14.0198, 0, 140.057, 0, 0, 0, 0, 0, 0, -11.7684, 0, 142.098, 0, 0, 0, 0, 0, 0, -9.93911, 0, 143.892, 0, 0, 0, 0, 0, 0, -7.30071, 0, 145.581, 0, 0, 0, 0, 0, 0, -4.09037, 0, 146.562, 0, 0, 0, 0, 0, 0, -0.502157, 0, 146.808, 0, 0, 0, 0, 0, 0, 2.87499, 0, 146.773, 0, 0, 0, 0, 0, 0, 6.39067, 0, 144.998, 0, 0, 0, 0, 0, 0, 8.82547, 0, 143.736, 0, 0, 0, 0, 0, 0, 11.5196, 0, 141.566, 0, 0, 0, 0, 0, 0, 13.0708, 0, 139.204, 0, 0, 0, 0, 0, 0, 13.7511, 0, 137.145, 0, 0, 0, 0, 0, 0, 14.0626, 0, 134.271, 0, 0, 0, 0, 0, 0, 13.307, 0, 131.793, 0, 0, 0, 0, 0, 0, 12.8005, 0, 127.533, 0, 0, 0, 0, 0, 0, 12.7058, 0, 122.903, 0, 0, 0, 0, 0, 0, 13.859, 0, 119.539, 0, 0, 0, 0, 0, 0, 15.007, 0, 117.101, 0, 0, 0, 0, 0, 0, 17.2172, 0, 114.264, 0, 0, 0, 0, 0, 0, 1.34986, 7.62939e-06, 107.737, 0, 0, 0, 0, 0, 0, -84.5354, 0, 73.2185, 0, 0, 0, 0, 0, 0, -80.4785, 0, 93.2569, 0, 0, 0, 0, 0, 0, -82.1039, 0, 106.91, 0, 0, 0, 0, 0, 0, -62.6661, 0, 119.454, 0, 0, 0, 0, 0, 0, -56.0299, 0, 156.19),
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 }
 point_count = 38
@@ -321,29 +322,29 @@ point_count = 38
 script = ExtResource("10_5hqlx")
 closed = true
 thickness = 0.0
-curve = SubResource("Curve3D_dr8r8")
+curve = SubResource("Curve3D_rneay")
 
-[sub_resource type="Resource" id="Resource_upgxo"]
+[sub_resource type="Resource" id="Resource_ahlcy"]
 script = ExtResource("4_pmtu5")
-amount = 200
+amount = 300
 enabled = true
-override_global_seed = false
-custom_seed = 0
+override_global_seed = true
+custom_seed = 1
 restrict_height = true
 reference_frame = 1
 
-[sub_resource type="Resource" id="Resource_swiir"]
+[sub_resource type="Resource" id="Resource_omj5h"]
 script = ExtResource("5_e3ik2")
 position = Vector3(0, 0, 0)
-rotation = Vector3(10, 360, 10)
-scale = Vector3(0.1, 0.1, 0.1)
+rotation = Vector3(5, 360, 5)
+scale = Vector3(-0.3, -0.3, -0.3)
 enabled = true
 override_global_seed = false
 custom_seed = 0
 restrict_height = false
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_txh5f"]
+[sub_resource type="Resource" id="Resource_rfcdo"]
 script = ExtResource("6_00q1u")
 iterations = 3
 offset_step = 0.2
@@ -355,13 +356,13 @@ custom_seed = 0
 restrict_height = true
 reference_frame = 0
 
-[sub_resource type="Resource" id="Resource_btm0r"]
+[sub_resource type="Resource" id="Resource_kpxai"]
 script = ExtResource("7_es4q7")
-ray_direction = Vector3(-5, -5, -5)
+ray_direction = Vector3(-1, -1, -1)
 ray_length = 50.0
 ray_offset = 20.0
 remove_points_on_miss = false
-align_with_collision_normal = true
+align_with_collision_normal = false
 max_slope = 90.0
 collision_mask = 1
 exclude_mask = 0
@@ -371,42 +372,387 @@ custom_seed = 0
 restrict_height = false
 reference_frame = 0
 
-[sub_resource type="Resource" id="Resource_50nh6"]
+[sub_resource type="Resource" id="Resource_e7gi8"]
 script = ExtResource("3_lrtom")
-stack = Array[Resource("res://addons/proton_scatter/src/modifiers/base_modifier.gd")]([SubResource("Resource_upgxo"), SubResource("Resource_swiir"), SubResource("Resource_txh5f"), SubResource("Resource_btm0r")])
+stack = Array[Resource("res://addons/proton_scatter/src/modifiers/base_modifier.gd")]([SubResource("Resource_ahlcy"), SubResource("Resource_omj5h"), SubResource("Resource_rfcdo"), SubResource("Resource_kpxai")])
 
-[sub_resource type="Curve3D" id="Curve3D_vgmi2"]
+[sub_resource type="Curve3D" id="Curve3D_7lv72"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -39.0854, 0, 167.521, 0, 0, 0, 0, 0, 0, -37.8271, 0, 164.669, 0, 0, 0, 0, 0, 0, -36.5687, 0, 162.111, 0, 0, 0, 0, 0, 0, -34.7689, 0, 158.113, 0, 0, 0, 0, 0, 0, -33.3369, 0, 153.836, 0, 0, 0, 0, 0, 0, -33.1271, 0, 151.361, 0, 0, 0, 0, 0, 0, -32.8028, 0, 148.033, 0, 0, 0, 0, 0, 0, -32.0897, 0, 146.104, 0, 0, 0, 0, 0, 0, -29.3994, 0, 144.053, 0, 0, 0, 0, 0, 0, -26.9579, 0, 142.183, 0, 0, 0, 0, 0, 0, -24.9343, 0, 141.282, 0, 0, 0, 0, 0, 0, -22.1731, 0, 140.77, 0, 0, 0, 0, 0, 0, -19.606, 0, 140.627, 0, 0, 0, 0, 0, 0, -16.9212, 0, 141.229, 0, 0, 0, 0, 0, 0, -15.3153, 0, 141.944, 0, 0, 0, 0, 0, 0, -13.9475, 0, 143.104, 0, 0, 0, 0, 0, 0, -12.2512, 0, 144.241, 0, 0, 0, 0, 0, 0, -10.3217, 0, 146.212, 0, 0, 0, 0, 0, 0, -8.10628, 0, 147.068, 0, 0, 0, 0, 0, 0, -5.92512, 0, 147.906, 0, 0, 0, 0, 0, 0, -2.61144, 0, 148.578, 0, 0, 0, 0, 0, 0, 0.366682, 0, 148.494, 0, 0, 0, 0, 0, 0, 4.17703, 0, 148.268, 0, 0, 0, 0, 0, 0, 7.23903, 0, 147.345, 0, 0, 0, 0, 0, 0, 10.2591, 0, 145.416, 0, 0, 0, 0, 0, 0, 13.1775, 0, 142.941, 0, 0, 0, 0, 0, 0, 15.2748, 0, 139.879, 0, 0, 0, 0, 0, 0, 16.7009, 0, 136.188, 0, 0, 0, 0, 0, 0, 16.7197, 0, 132.78, 0, 0, 0, 0, 0, 0, 16.3003, 0, 130.263, 0, 0, 0, 0, 0, 0, 16.2433, 0, 127.066, 0, 0, 0, 0, 0, 0, 16.6182, 0, 123.275, 0, 0, 0, 0, 0, 0, 17.2108, 0, 118.709, 0, 0, 0, 0, 0, 0, 18.53, 0, 115.312, 0, 0, 0, 0, 0, 0, 32.7779, 0, 121.683, 0, 0, 0, 0, 0, 0, 9.75043, 0, 159.144, 0, 0, 0, 0, 0, 0, -24.7908, 0, 167.576),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 17.2254, 0, 114.288, 0, 0, 0, 0, 0, 0, 19.1146, 0, 112.774, 0, 0, 0, 0, 0, 0, 21.0625, 0, 111.414, 0, 0, 0, 0, 0, 0, 23.3814, 0, 109.744, 0, 0, 0, 0, 0, 0, 25.0201, 0, 108.476, 0, 0, 0, 0, 0, 0, 26.4854, 0, 107.133, 0, 0, 0, 0, 0, 0, 27.382, 0, 105.68, 0, 0, 0, 0, 0, 0, 28.1317, 0, 103.581, 0, 0, 0, 0, 0, 0, 28.5177, 0, 101.398, 0, 0, 0, 0, 0, 0, 28.796, 0, 98.6776, 0, 0, 0, 0, 0, 0, 28.5893, 0, 96.7171, 0, 0, 0, 0, 0, 0, 27.94, 0, 94.5837, 0, 0, 0, 0, 0, 0, 27.1287, 0, 92.7409, 0, 0, 0, 0, 0, 0, 25.49, 0, 89.9582, 0, 0, 0, 0, 0, 0, 23.3418, -2.38419e-07, 87.499, 0, 0, 0, 0, 0, 0, 21.6956, 0, 86.1898, 0, 0, 0, 0, 0, 0, 18.0213, 0, 83.7244, 0, 0, 0, 0, 0, 0, 15.1851, 0, 81.9098, 0, 0, 0, 0, 0, 0, 13.0801, 0, 80.5799, 0, 0, 0, 0, 0, 0, 10.2974, 0, 79.5905, 0, 0, 0, 0, 0, 0, 7.29825, 0, 79.0339, 0, 0, 0, 0, 0, 0, 3.58799, 0, 78.5083, 0, 0, 0, 0, 0, 0, 1.01513, 0, 77.9997, 0, 0, 0, 0, 0, 0, -1.58205, 0, 77.3813, 0, 0, 0, 0, 0, 0, -4.14832, 0, 76.1445, 0, 0, 0, 0, 0, 0, -5.72518, 0, 74.815, 0, 0, 0, 0, 0, 0, -7.8173, 0, 72.19, 0, 0, 0, 0, 0, 0, -10.3217, 0, 69.3145, 0, 0, 0, 0, 0, 0, -12.423, 0, 66.2433, 0, 0, 0, 0, 0, 0, -12.9795, 0, 64.9756, 0, 0, 0, 0, 0, 0, -13.2887, 0, 63.2132, 0, 0, 0, 0, 0, 0, -13.5913, 0, 60.5061, 0, 0, 0, 0, 0, 0, -13.7409, 0, 57.9334, 0, 0, 0, 0, 0, 0, -13.7094, 0, 54.9014, 0, 0, 0, 0, 0, 0, -13.6302, 0, 52.2246, 0, 0, 0, 0, 0, 0, -13.2712, 0, 49.6818, 0, 0, 0, 0, 0, 0, -13.002, 0, 47.0493, 0, 0, 0, 0, 0, 0, -12.5233, 0, 44.2972, 0, 0, 0, 0, 0, 0, -11.886, 0, 41.8395, 0, 0, 0, 0, 0, 0, -10.7493, 0, 38.9078, 0, 0, 0, 0, 0, 0, -9.67232, 0, 37.2027, 0, 0, 0, 0, 0, 0, -7.48695, 0, 35.0149, 0, 0, 0, 0, 0, 0, -5.10724, 0, 33.1512, 0, 0, 0, 0, 0, 0, -1.83576, 0, 31.3987, 0, 0, 0, 0, 0, 0, 1.39678, 0, 30.1134, 0, 0, 0, 0, 0, 0, 4.51248, 0, 29.1398, 0, 0, 0, 0, 0, 0, -76.0863, 0, 19.9123, 0, 0, 0, 0, 0, 0, -92.0988, 0, 69.7636, 0, 0, 0, 0, 0, 0, -46.7984, 0, 89.7072),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 49
+
+[sub_resource type="Resource" id="Resource_a0tf3"]
+script = ExtResource("10_5hqlx")
+closed = true
+thickness = 0.0
+curve = SubResource("Curve3D_7lv72")
+
+[sub_resource type="Curve3D" id="Curve3D_wdri8"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 19.342, 0, 115.655, 0, 0, 0, 0, 0, 0, 23.1852, 0, 112.518, 0, 0, 0, 0, 0, 0, 26.1397, 0, 110.03, 0, 0, 0, 0, 0, 0, 28.1612, 0, 107.649, 0, 0, 0, 0, 0, 0, 29.3983, 0, 105.183, 0, 0, 0, 0, 0, 0, 30.1842, 0, 102.04, 0, 0, 0, 0, 0, 0, 30.3656, 0, 99.9237, 0, 0, 0, 0, 0, 0, 30.6074, 0, 96.5985, 0, 0, 0, 0, 0, 0, 29.4915, 0, 93.0583, 0, 0, 0, 0, 0, 0, 27.3157, 0, 88.617, 0, 0, 0, 0, 0, 0, 24.2324, 0, 85.2313, 0, 0, 0, 0, 0, 0, 20.8212, 0, 82.6839, 0, 0, 0, 0, 0, 0, 16.8017, 0, 80.0042, 0, 0, 0, 0, 0, 0, 12.5001, 0, 78.0298, 0, 0, 0, 0, 0, 0, 8.41009, 0, 76.9015, 0, 0, 0, 0, 0, 0, 3.81656, 0, 75.9614, 0, 0, 0, 0, 0, 0, -0.273466, 0, 75.4677, 0, 0, 0, 0, 0, 0, -2.31848, 0, 74.3395, 0, 0, 0, 0, 0, 0, -3.86987, 0, 72.7881, 0, 0, 0, 0, 0, 0, -6.28769, 0, 70.1936, 0, 0, 0, 0, 0, 0, -7.98011, 0, 68.0075, 0, 0, 0, 0, 0, 0, -9.5315, 0, 65.9625, 0, 0, 0, 0, 0, 0, -10.7303, 0, 63.847, 0, 0, 0, 0, 0, 0, -11.6623, 0, 58.7928, 0, 0, 0, 0, 0, 0, -10.9875, 0, 46.9974, 0, 0, 0, 0, 0, 0, -9.50663, 0, 40.8624, 0, 0, 0, 0, 0, 0, -7.21338, 0, 37.3319, 0, 0, 0, 0, 0, 0, -4.1106, 0, 34.7227, 0, 0, 0, 0, 0, 0, 0.402538, 0, 32.6072, 0, 0, 0, 0, 0, 0, 6.25551, 0, 30.3506, 0, 0, 0, 0, 0, 0, 102.856, 0, 52.3308, 0, 0, 0, 0, 0, 0, 67.1919, 0, 136.265),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 32
+
+[sub_resource type="Resource" id="Resource_pkf8i"]
+script = ExtResource("10_5hqlx")
+closed = true
+thickness = 0.0
+curve = SubResource("Curve3D_wdri8")
+
+[sub_resource type="Resource" id="Resource_m5cqm"]
+script = ExtResource("4_pmtu5")
+amount = 200
+enabled = true
+override_global_seed = true
+custom_seed = 7
+restrict_height = true
+reference_frame = 1
+
+[sub_resource type="Resource" id="Resource_jejh2"]
+script = ExtResource("5_e3ik2")
+position = Vector3(0, 0, 0)
+rotation = Vector3(7, 360, 7)
+scale = Vector3(0.3, 0.3, 0.3)
+enabled = true
+override_global_seed = false
+custom_seed = 0
+restrict_height = false
+reference_frame = 2
+
+[sub_resource type="Resource" id="Resource_l1u65"]
+script = ExtResource("6_00q1u")
+iterations = 3
+offset_step = 0.2
+consecutive_step_multiplier = 0.75
+use_computeshader = true
+enabled = true
+override_global_seed = false
+custom_seed = 0
+restrict_height = true
+reference_frame = 0
+
+[sub_resource type="Resource" id="Resource_sxedg"]
+script = ExtResource("7_es4q7")
+ray_direction = Vector3(-5, -5, -5)
+ray_length = 50.0
+ray_offset = 20.0
+remove_points_on_miss = false
+align_with_collision_normal = false
+max_slope = 90.0
+collision_mask = 1
+exclude_mask = 0
+enabled = true
+override_global_seed = false
+custom_seed = 0
+restrict_height = false
+reference_frame = 0
+
+[sub_resource type="Resource" id="Resource_v1o6o"]
+script = ExtResource("3_lrtom")
+stack = Array[Resource("res://addons/proton_scatter/src/modifiers/base_modifier.gd")]([SubResource("Resource_m5cqm"), SubResource("Resource_jejh2"), SubResource("Resource_l1u65"), SubResource("Resource_sxedg")])
+
+[sub_resource type="Curve3D" id="Curve3D_j3swy"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -39.0854, 0, 167.521, 0, 0, 0, 0, 0, 0, -37.8271, 0, 164.669, 0, 0, 0, 0, 0, 0, -36.5687, 0, 162.111, 0, 0, 0, 0, 0, 0, -34.7689, 0, 158.113, 0, 0, 0, 0, 0, 0, -33.3369, 0, 153.836, 0, 0, 0, 0, 0, 0, -33.1271, 0, 151.361, 0, 0, 0, 0, 0, 0, -32.8028, 0, 148.033, 0, 0, 0, 0, 0, 0, -32.0897, 0, 146.104, 0, 0, 0, 0, 0, 0, -29.7148, 0, 143.614, 0, 0, 0, 0, 0, 0, -27.3658, 0, 141.727, 0, 0, 0, 0, 0, 0, -25.8139, 0, 141.097, 0, 0, 0, 0, 0, 0, -22.5421, 0, 140.301, 0, 0, 0, 0, 0, 0, -19.522, 0, 140.091, 0, 0, 0, 0, 0, 0, -17.5087, 0, 140.259, 0, 0, 0, 0, 0, 0, -15.3132, 0, 141.179, 0, 0, 0, 0, 0, 0, -13.8032, 0, 142.479, 0, 0, 0, 0, 0, 0, -12.2512, 0, 144.241, 0, 0, 0, 0, 0, 0, -10.3217, 0, 146.212, 0, 0, 0, 0, 0, 0, -8.10628, 0, 147.068, 0, 0, 0, 0, 0, 0, -5.92512, 0, 147.906, 0, 0, 0, 0, 0, 0, -2.61144, 0, 148.578, 0, 0, 0, 0, 0, 0, 0.366682, 0, 148.494, 0, 0, 0, 0, 0, 0, 4.17703, 0, 148.268, 0, 0, 0, 0, 0, 0, 7.23903, 0, 147.345, 0, 0, 0, 0, 0, 0, 10.2591, 0, 145.416, 0, 0, 0, 0, 0, 0, 13.1775, 0, 142.941, 0, 0, 0, 0, 0, 0, 15.2748, 0, 139.879, 0, 0, 0, 0, 0, 0, 16.7009, 0, 136.188, 0, 0, 0, 0, 0, 0, 16.7197, 0, 132.78, 0, 0, 0, 0, 0, 0, 16.3003, 0, 130.263, 0, 0, 0, 0, 0, 0, 16.2433, 0, 127.066, 0, 0, 0, 0, 0, 0, 16.6182, 0, 123.275, 0, 0, 0, 0, 0, 0, 17.2108, 0, 118.709, 0, 0, 0, 0, 0, 0, 19.2242, 0, 115.647, 0, 0, 0, 0, 0, 0, 67.1345, 0, 136.814, 0, 0, 0, 0, 0, 0, 46.3556, 0, 177.738, 0, 0, 0, 0, 0, 0, -8.75268, 0, 182.099),
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 }
 point_count = 37
 
-[sub_resource type="Resource" id="Resource_cfdb8"]
+[sub_resource type="Resource" id="Resource_tagy1"]
 script = ExtResource("10_5hqlx")
 closed = true
 thickness = 0.0
-curve = SubResource("Curve3D_vgmi2")
+curve = SubResource("Curve3D_j3swy")
 
-[sub_resource type="Curve3D" id="Curve3D_2qs4q"]
+[sub_resource type="Curve3D" id="Curve3D_ysp7i"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -40.9341, 0, 167.227, 0, 0, 0, 0, 0, 0, -39.3547, 0, 163.733, 0, 0, 0, 0, 0, 0, -37.2967, 0, 159.521, 0, 0, 0, 0, 0, 0, -35.6216, 0, 155.597, 0, 0, 0, 0, 0, 0, -34.8969, 0, 153.014, 0, 0, 0, 0, 0, 0, -34.7054, 0, 148.85, 0, 0, 0, 0, 0, 0, -34.179, 0, 146.074, 0, 0, 0, 0, 0, 0, -32.4257, 0, 143.568, 0, 0, 0, 0, 0, 0, -29.8413, 0, 141.223, 0, 0, 0, 0, 0, 0, -26.5389, 0, 139.548, 0, 0, 0, 0, 0, 0, -22.6777, 0, 138.344, 0, 0, 0, 0, 0, 0, -19.519, 0, 138.392, 0, 0, 0, 0, 0, 0, -16.6952, 0, 138.727, 0, 0, 0, 0, 0, 0, -14.0198, 0, 140.057, 0, 0, 0, 0, 0, 0, -11.7684, 0, 142.098, 0, 0, 0, 0, 0, 0, -9.93911, 0, 143.892, 0, 0, 0, 0, 0, 0, -7.30071, 0, 145.581, 0, 0, 0, 0, 0, 0, -4.09037, 0, 146.562, 0, 0, 0, 0, 0, 0, -0.502157, 0, 146.808, 0, 0, 0, 0, 0, 0, 2.87499, 0, 146.773, 0, 0, 0, 0, 0, 0, 6.39067, 0, 144.998, 0, 0, 0, 0, 0, 0, 8.82547, 0, 143.736, 0, 0, 0, 0, 0, 0, 11.5196, 0, 141.566, 0, 0, 0, 0, 0, 0, 13.0708, 0, 139.204, 0, 0, 0, 0, 0, 0, 13.7511, 0, 137.145, 0, 0, 0, 0, 0, 0, 14.0626, 0, 134.271, 0, 0, 0, 0, 0, 0, 14.2771, 0, 131.104, 0, 0, 0, 0, 0, 0, 14.3703, 0, 127.691, 0, 0, 0, 0, 0, 0, 13.9481, 0, 124.173, 0, 0, 0, 0, 0, 0, 14.227, 0, 119.787, 0, 0, 0, 0, 0, 0, 15.1416, 0, 117.395, 0, 0, 0, 0, 0, 0, 17.2172, 0, 114.264, 0, 0, 0, 0, 0, 0, 1.34986, 7.62939e-06, 107.737, 0, 0, 0, 0, 0, 0, 2.24589, 0, 119.581, 0, 0, 0, 0, 0, 0, 0.462078, 0, 128.662, 0, 0, 0, 0, 0, 0, -16.7274, 0, 124.446, 0, 0, 0, 0, 0, 0, -40.8901, 0, 134.986, 0, 0, 0, 0, 0, 0, -56.0299, 0, 156.19),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -40.9341, 0, 167.227, 0, 0, 0, 0, 0, 0, -39.3547, 0, 163.733, 0, 0, 0, 0, 0, 0, -37.2967, 0, 159.521, 0, 0, 0, 0, 0, 0, -35.6216, 0, 155.597, 0, 0, 0, 0, 0, 0, -34.8969, 0, 153.014, 0, 0, 0, 0, 0, 0, -34.7054, 0, 148.85, 0, 0, 0, 0, 0, 0, -34.179, 0, 146.074, 0, 0, 0, 0, 0, 0, -32.4257, 0, 143.568, 0, 0, 0, 0, 0, 0, -29.8413, 0, 141.223, 0, 0, 0, 0, 0, 0, -26.5389, 0, 139.548, 0, 0, 0, 0, 0, 0, -22.6777, 0, 138.344, 0, 0, 0, 0, 0, 0, -19.519, 0, 138.392, 0, 0, 0, 0, 0, 0, -16.6952, 0, 138.727, 0, 0, 0, 0, 0, 0, -14.0198, 0, 140.057, 0, 0, 0, 0, 0, 0, -11.7684, 0, 142.098, 0, 0, 0, 0, 0, 0, -9.93911, 0, 143.892, 0, 0, 0, 0, 0, 0, -7.30071, 0, 145.581, 0, 0, 0, 0, 0, 0, -4.09037, 0, 146.562, 0, 0, 0, 0, 0, 0, -0.502157, 0, 146.808, 0, 0, 0, 0, 0, 0, 2.87499, 0, 146.773, 0, 0, 0, 0, 0, 0, 6.39067, 0, 144.998, 0, 0, 0, 0, 0, 0, 8.82547, 0, 143.736, 0, 0, 0, 0, 0, 0, 11.5196, 0, 141.566, 0, 0, 0, 0, 0, 0, 13.0708, 0, 139.204, 0, 0, 0, 0, 0, 0, 13.7511, 0, 137.145, 0, 0, 0, 0, 0, 0, 14.0626, 0, 134.271, 0, 0, 0, 0, 0, 0, 13.307, 0, 131.793, 0, 0, 0, 0, 0, 0, 12.8005, 0, 127.533, 0, 0, 0, 0, 0, 0, 12.7058, 0, 122.903, 0, 0, 0, 0, 0, 0, 13.859, 0, 119.539, 0, 0, 0, 0, 0, 0, 15.007, 0, 117.101, 0, 0, 0, 0, 0, 0, 17.2172, 0, 114.264, 0, 0, 0, 0, 0, 0, 1.34986, 7.62939e-06, 107.737, 0, 0, 0, 0, 0, 0, -84.5354, 0, 73.2185, 0, 0, 0, 0, 0, 0, -80.4785, 0, 93.2569, 0, 0, 0, 0, 0, 0, -82.1039, 0, 106.91, 0, 0, 0, 0, 0, 0, -62.6661, 0, 119.454, 0, 0, 0, 0, 0, 0, -56.0299, 0, 156.19),
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 }
 point_count = 38
 
-[sub_resource type="Resource" id="Resource_8hysg"]
+[sub_resource type="Resource" id="Resource_yhi8x"]
 script = ExtResource("10_5hqlx")
 closed = true
 thickness = 0.0
-curve = SubResource("Curve3D_2qs4q")
+curve = SubResource("Curve3D_ysp7i")
+
+[sub_resource type="Resource" id="Resource_tqdvk"]
+script = ExtResource("4_pmtu5")
+amount = 200
+enabled = true
+override_global_seed = true
+custom_seed = 6
+restrict_height = true
+reference_frame = 1
+
+[sub_resource type="Resource" id="Resource_hgcul"]
+script = ExtResource("5_e3ik2")
+position = Vector3(0, 0, 0)
+rotation = Vector3(7, 360, 7)
+scale = Vector3(0.3, 0.3, 0.3)
+enabled = true
+override_global_seed = false
+custom_seed = 0
+restrict_height = false
+reference_frame = 2
+
+[sub_resource type="Resource" id="Resource_dqdfp"]
+script = ExtResource("6_00q1u")
+iterations = 3
+offset_step = 0.2
+consecutive_step_multiplier = 0.75
+use_computeshader = true
+enabled = true
+override_global_seed = false
+custom_seed = 0
+restrict_height = true
+reference_frame = 0
+
+[sub_resource type="Resource" id="Resource_jhdag"]
+script = ExtResource("7_es4q7")
+ray_direction = Vector3(-1, -1, -1)
+ray_length = 50.0
+ray_offset = 20.0
+remove_points_on_miss = false
+align_with_collision_normal = false
+max_slope = 90.0
+collision_mask = 1
+exclude_mask = 0
+enabled = true
+override_global_seed = false
+custom_seed = 0
+restrict_height = false
+reference_frame = 0
+
+[sub_resource type="Resource" id="Resource_wujal"]
+script = ExtResource("3_lrtom")
+stack = Array[Resource("res://addons/proton_scatter/src/modifiers/base_modifier.gd")]([SubResource("Resource_tqdvk"), SubResource("Resource_hgcul"), SubResource("Resource_dqdfp"), SubResource("Resource_jhdag")])
+
+[sub_resource type="Curve3D" id="Curve3D_r8lcb"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 17.2254, 0, 114.288, 0, 0, 0, 0, 0, 0, 19.1146, 0, 112.774, 0, 0, 0, 0, 0, 0, 21.0625, 0, 111.414, 0, 0, 0, 0, 0, 0, 23.3814, 0, 109.744, 0, 0, 0, 0, 0, 0, 25.0201, 0, 108.476, 0, 0, 0, 0, 0, 0, 26.4854, 0, 107.133, 0, 0, 0, 0, 0, 0, 27.382, 0, 105.68, 0, 0, 0, 0, 0, 0, 28.1317, 0, 103.581, 0, 0, 0, 0, 0, 0, 28.5177, 0, 101.398, 0, 0, 0, 0, 0, 0, 28.796, 0, 98.6776, 0, 0, 0, 0, 0, 0, 28.5893, 0, 96.7171, 0, 0, 0, 0, 0, 0, 27.94, 0, 94.5837, 0, 0, 0, 0, 0, 0, 27.1287, 0, 92.7409, 0, 0, 0, 0, 0, 0, 25.49, 0, 89.9582, 0, 0, 0, 0, 0, 0, 23.3418, -2.38419e-07, 87.499, 0, 0, 0, 0, 0, 0, 21.6956, 0, 86.1898, 0, 0, 0, 0, 0, 0, 18.0213, 0, 83.7244, 0, 0, 0, 0, 0, 0, 15.1851, 0, 81.9098, 0, 0, 0, 0, 0, 0, 13.0801, 0, 80.5799, 0, 0, 0, 0, 0, 0, 10.2974, 0, 79.5905, 0, 0, 0, 0, 0, 0, 7.29825, 0, 79.0339, 0, 0, 0, 0, 0, 0, 3.58799, 0, 78.5083, 0, 0, 0, 0, 0, 0, 1.01513, 0, 77.9997, 0, 0, 0, 0, 0, 0, -1.58205, 0, 77.3813, 0, 0, 0, 0, 0, 0, -4.14832, 0, 76.1445, 0, 0, 0, 0, 0, 0, -5.72518, 0, 74.815, 0, 0, 0, 0, 0, 0, -7.8173, 0, 72.19, 0, 0, 0, 0, 0, 0, -10.3217, 0, 69.3145, 0, 0, 0, 0, 0, 0, -12.423, 0, 66.2433, 0, 0, 0, 0, 0, 0, -12.9795, 0, 64.9756, 0, 0, 0, 0, 0, 0, -13.2887, 0, 63.2132, 0, 0, 0, 0, 0, 0, -13.5913, 0, 60.5061, 0, 0, 0, 0, 0, 0, -13.7409, 0, 57.9334, 0, 0, 0, 0, 0, 0, -13.7094, 0, 54.9014, 0, 0, 0, 0, 0, 0, -13.6302, 0, 52.2246, 0, 0, 0, 0, 0, 0, -13.2712, 0, 49.6818, 0, 0, 0, 0, 0, 0, -13.002, 0, 47.0493, 0, 0, 0, 0, 0, 0, -12.5233, 0, 44.2972, 0, 0, 0, 0, 0, 0, -11.886, 0, 41.8395, 0, 0, 0, 0, 0, 0, -10.7493, 0, 38.9078, 0, 0, 0, 0, 0, 0, -9.67232, 0, 37.2027, 0, 0, 0, 0, 0, 0, -7.48695, 0, 35.0149, 0, 0, 0, 0, 0, 0, -5.10724, 0, 33.1512, 0, 0, 0, 0, 0, 0, -1.83576, 0, 31.3987, 0, 0, 0, 0, 0, 0, 1.39678, 0, 30.1134, 0, 0, 0, 0, 0, 0, 4.51248, 0, 29.1398, 0, 0, 0, 0, 0, 0, -76.0863, 0, 19.9123, 0, 0, 0, 0, 0, 0, -92.0988, 0, 69.7636, 0, 0, 0, 0, 0, 0, -46.7984, 0, 89.7072),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 49
+
+[sub_resource type="Resource" id="Resource_vwpud"]
+script = ExtResource("10_5hqlx")
+closed = true
+thickness = 0.0
+curve = SubResource("Curve3D_r8lcb")
+
+[sub_resource type="Curve3D" id="Curve3D_r5a62"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 19.342, 0, 115.655, 0, 0, 0, 0, 0, 0, 23.1852, 0, 112.518, 0, 0, 0, 0, 0, 0, 26.1397, 0, 110.03, 0, 0, 0, 0, 0, 0, 28.1612, 0, 107.649, 0, 0, 0, 0, 0, 0, 29.3983, 0, 105.183, 0, 0, 0, 0, 0, 0, 30.1842, 0, 102.04, 0, 0, 0, 0, 0, 0, 30.3656, 0, 99.9237, 0, 0, 0, 0, 0, 0, 30.6074, 0, 96.5985, 0, 0, 0, 0, 0, 0, 29.4915, 0, 93.0583, 0, 0, 0, 0, 0, 0, 27.3157, 0, 88.617, 0, 0, 0, 0, 0, 0, 24.2324, 0, 85.2313, 0, 0, 0, 0, 0, 0, 20.8212, 0, 82.6839, 0, 0, 0, 0, 0, 0, 16.8017, 0, 80.0042, 0, 0, 0, 0, 0, 0, 12.5001, 0, 78.0298, 0, 0, 0, 0, 0, 0, 8.41009, 0, 76.9015, 0, 0, 0, 0, 0, 0, 3.81656, 0, 75.9614, 0, 0, 0, 0, 0, 0, -0.273466, 0, 75.4677, 0, 0, 0, 0, 0, 0, -2.31848, 0, 74.3395, 0, 0, 0, 0, 0, 0, -3.86987, 0, 72.7881, 0, 0, 0, 0, 0, 0, -6.28769, 0, 70.1936, 0, 0, 0, 0, 0, 0, -7.98011, 0, 68.0075, 0, 0, 0, 0, 0, 0, -9.5315, 0, 65.9625, 0, 0, 0, 0, 0, 0, -10.7303, 0, 63.847, 0, 0, 0, 0, 0, 0, -11.6623, 0, 58.7928, 0, 0, 0, 0, 0, 0, -10.9875, 0, 46.9974, 0, 0, 0, 0, 0, 0, -9.50663, 0, 40.8624, 0, 0, 0, 0, 0, 0, -7.21338, 0, 37.3319, 0, 0, 0, 0, 0, 0, -4.1106, 0, 34.7227, 0, 0, 0, 0, 0, 0, 0.402538, 0, 32.6072, 0, 0, 0, 0, 0, 0, 6.25551, 0, 30.3506, 0, 0, 0, 0, 0, 0, 102.856, 0, 52.3308, 0, 0, 0, 0, 0, 0, 67.1919, 0, 136.265),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 32
+
+[sub_resource type="Resource" id="Resource_jleo0"]
+script = ExtResource("10_5hqlx")
+closed = true
+thickness = 0.0
+curve = SubResource("Curve3D_r5a62")
+
+[sub_resource type="Resource" id="Resource_stnxx"]
+script = ExtResource("4_pmtu5")
+amount = 200
+enabled = true
+override_global_seed = true
+custom_seed = 6
+restrict_height = true
+reference_frame = 1
+
+[sub_resource type="Resource" id="Resource_urek6"]
+script = ExtResource("5_e3ik2")
+position = Vector3(0, 0, 0)
+rotation = Vector3(7, 360, 7)
+scale = Vector3(0.3, 0.5, 0.3)
+enabled = true
+override_global_seed = false
+custom_seed = 0
+restrict_height = false
+reference_frame = 2
+
+[sub_resource type="Resource" id="Resource_lo4cm"]
+script = ExtResource("6_00q1u")
+iterations = 3
+offset_step = 0.2
+consecutive_step_multiplier = 0.75
+use_computeshader = true
+enabled = true
+override_global_seed = false
+custom_seed = 0
+restrict_height = true
+reference_frame = 0
+
+[sub_resource type="Resource" id="Resource_ipao7"]
+script = ExtResource("7_es4q7")
+ray_direction = Vector3(-1, -1, -1)
+ray_length = 50.0
+ray_offset = 20.0
+remove_points_on_miss = false
+align_with_collision_normal = false
+max_slope = 90.0
+collision_mask = 1
+exclude_mask = 0
+enabled = true
+override_global_seed = false
+custom_seed = 0
+restrict_height = false
+reference_frame = 0
+
+[sub_resource type="Resource" id="Resource_i1alq"]
+script = ExtResource("3_lrtom")
+stack = Array[Resource("res://addons/proton_scatter/src/modifiers/base_modifier.gd")]([SubResource("Resource_stnxx"), SubResource("Resource_urek6"), SubResource("Resource_lo4cm"), SubResource("Resource_ipao7")])
+
+[sub_resource type="Curve3D" id="Curve3D_vwl8w"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -39.0854, 0, 167.521, 0, 0, 0, 0, 0, 0, -37.8271, 0, 164.669, 0, 0, 0, 0, 0, 0, -36.5687, 0, 162.111, 0, 0, 0, 0, 0, 0, -34.7689, 0, 158.113, 0, 0, 0, 0, 0, 0, -33.3369, 0, 153.836, 0, 0, 0, 0, 0, 0, -33.1271, 0, 151.361, 0, 0, 0, 0, 0, 0, -32.8028, 0, 148.033, 0, 0, 0, 0, 0, 0, -32.0897, 0, 146.104, 0, 0, 0, 0, 0, 0, -29.7148, 0, 143.614, 0, 0, 0, 0, 0, 0, -27.3658, 0, 141.727, 0, 0, 0, 0, 0, 0, -25.8139, 0, 141.097, 0, 0, 0, 0, 0, 0, -22.5421, 0, 140.301, 0, 0, 0, 0, 0, 0, -19.522, 0, 140.091, 0, 0, 0, 0, 0, 0, -17.5087, 0, 140.259, 0, 0, 0, 0, 0, 0, -15.3132, 0, 141.179, 0, 0, 0, 0, 0, 0, -13.8032, 0, 142.479, 0, 0, 0, 0, 0, 0, -12.2512, 0, 144.241, 0, 0, 0, 0, 0, 0, -10.3217, 0, 146.212, 0, 0, 0, 0, 0, 0, -8.10628, 0, 147.068, 0, 0, 0, 0, 0, 0, -5.92512, 0, 147.906, 0, 0, 0, 0, 0, 0, -2.61144, 0, 148.578, 0, 0, 0, 0, 0, 0, 0.366682, 0, 148.494, 0, 0, 0, 0, 0, 0, 4.17703, 0, 148.268, 0, 0, 0, 0, 0, 0, 7.23903, 0, 147.345, 0, 0, 0, 0, 0, 0, 10.2591, 0, 145.416, 0, 0, 0, 0, 0, 0, 13.1775, 0, 142.941, 0, 0, 0, 0, 0, 0, 15.2748, 0, 139.879, 0, 0, 0, 0, 0, 0, 16.7009, 0, 136.188, 0, 0, 0, 0, 0, 0, 16.7197, 0, 132.78, 0, 0, 0, 0, 0, 0, 16.3003, 0, 130.263, 0, 0, 0, 0, 0, 0, 16.2433, 0, 127.066, 0, 0, 0, 0, 0, 0, 16.6182, 0, 123.275, 0, 0, 0, 0, 0, 0, 17.2108, 0, 118.709, 0, 0, 0, 0, 0, 0, 19.2242, 0, 115.647, 0, 0, 0, 0, 0, 0, 67.1345, 0, 136.814, 0, 0, 0, 0, 0, 0, 46.3556, 0, 177.738, 0, 0, 0, 0, 0, 0, -8.75268, 0, 182.099),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 37
+
+[sub_resource type="Resource" id="Resource_etdep"]
+script = ExtResource("10_5hqlx")
+closed = true
+thickness = 0.0
+curve = SubResource("Curve3D_vwl8w")
+
+[sub_resource type="Curve3D" id="Curve3D_us0yi"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -40.9341, 0, 167.227, 0, 0, 0, 0, 0, 0, -39.3547, 0, 163.733, 0, 0, 0, 0, 0, 0, -37.2967, 0, 159.521, 0, 0, 0, 0, 0, 0, -35.6216, 0, 155.597, 0, 0, 0, 0, 0, 0, -34.8969, 0, 153.014, 0, 0, 0, 0, 0, 0, -34.7054, 0, 148.85, 0, 0, 0, 0, 0, 0, -34.179, 0, 146.074, 0, 0, 0, 0, 0, 0, -32.4257, 0, 143.568, 0, 0, 0, 0, 0, 0, -29.8413, 0, 141.223, 0, 0, 0, 0, 0, 0, -26.5389, 0, 139.548, 0, 0, 0, 0, 0, 0, -22.6777, 0, 138.344, 0, 0, 0, 0, 0, 0, -19.519, 0, 138.392, 0, 0, 0, 0, 0, 0, -16.6952, 0, 138.727, 0, 0, 0, 0, 0, 0, -14.0198, 0, 140.057, 0, 0, 0, 0, 0, 0, -11.7684, 0, 142.098, 0, 0, 0, 0, 0, 0, -9.93911, 0, 143.892, 0, 0, 0, 0, 0, 0, -7.30071, 0, 145.581, 0, 0, 0, 0, 0, 0, -4.09037, 0, 146.562, 0, 0, 0, 0, 0, 0, -0.502157, 0, 146.808, 0, 0, 0, 0, 0, 0, 2.87499, 0, 146.773, 0, 0, 0, 0, 0, 0, 6.39067, 0, 144.998, 0, 0, 0, 0, 0, 0, 8.82547, 0, 143.736, 0, 0, 0, 0, 0, 0, 11.5196, 0, 141.566, 0, 0, 0, 0, 0, 0, 13.0708, 0, 139.204, 0, 0, 0, 0, 0, 0, 13.7511, 0, 137.145, 0, 0, 0, 0, 0, 0, 14.0626, 0, 134.271, 0, 0, 0, 0, 0, 0, 13.307, 0, 131.793, 0, 0, 0, 0, 0, 0, 12.8005, 0, 127.533, 0, 0, 0, 0, 0, 0, 12.7058, 0, 122.903, 0, 0, 0, 0, 0, 0, 13.859, 0, 119.539, 0, 0, 0, 0, 0, 0, 15.007, 0, 117.101, 0, 0, 0, 0, 0, 0, 17.2172, 0, 114.264, 0, 0, 0, 0, 0, 0, 1.34986, 7.62939e-06, 107.737, 0, 0, 0, 0, 0, 0, -84.5354, 0, 73.2185, 0, 0, 0, 0, 0, 0, -80.4785, 0, 93.2569, 0, 0, 0, 0, 0, 0, -82.1039, 0, 106.91, 0, 0, 0, 0, 0, 0, -62.6661, 0, 119.454, 0, 0, 0, 0, 0, 0, -56.0299, 0, 156.19),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 38
+
+[sub_resource type="Resource" id="Resource_jqcn1"]
+script = ExtResource("10_5hqlx")
+closed = true
+thickness = 0.0
+curve = SubResource("Curve3D_us0yi")
+
+[sub_resource type="Resource" id="Resource_g067m"]
+script = ExtResource("4_pmtu5")
+amount = 200
+enabled = true
+override_global_seed = true
+custom_seed = 6
+restrict_height = true
+reference_frame = 1
+
+[sub_resource type="Resource" id="Resource_wlha3"]
+script = ExtResource("5_e3ik2")
+position = Vector3(0, 0, 0)
+rotation = Vector3(7, 360, 7)
+scale = Vector3(0.3, 0.5, 0.3)
+enabled = true
+override_global_seed = false
+custom_seed = 0
+restrict_height = false
+reference_frame = 2
+
+[sub_resource type="Resource" id="Resource_0m2wl"]
+script = ExtResource("6_00q1u")
+iterations = 3
+offset_step = 0.2
+consecutive_step_multiplier = 0.75
+use_computeshader = true
+enabled = true
+override_global_seed = false
+custom_seed = 0
+restrict_height = true
+reference_frame = 0
+
+[sub_resource type="Resource" id="Resource_eoe2q"]
+script = ExtResource("7_es4q7")
+ray_direction = Vector3(-1, -1, -1)
+ray_length = 50.0
+ray_offset = 20.0
+remove_points_on_miss = false
+align_with_collision_normal = false
+max_slope = 90.0
+collision_mask = 1
+exclude_mask = 0
+enabled = true
+override_global_seed = false
+custom_seed = 0
+restrict_height = false
+reference_frame = 0
+
+[sub_resource type="Resource" id="Resource_1bvqs"]
+script = ExtResource("3_lrtom")
+stack = Array[Resource("res://addons/proton_scatter/src/modifiers/base_modifier.gd")]([SubResource("Resource_g067m"), SubResource("Resource_wlha3"), SubResource("Resource_0m2wl"), SubResource("Resource_eoe2q")])
+
+[sub_resource type="Curve3D" id="Curve3D_wtqsp"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 17.2254, 0, 114.288, 0, 0, 0, 0, 0, 0, 19.1146, 0, 112.774, 0, 0, 0, 0, 0, 0, 21.0625, 0, 111.414, 0, 0, 0, 0, 0, 0, 23.3814, 0, 109.744, 0, 0, 0, 0, 0, 0, 25.0201, 0, 108.476, 0, 0, 0, 0, 0, 0, 26.4854, 0, 107.133, 0, 0, 0, 0, 0, 0, 27.382, 0, 105.68, 0, 0, 0, 0, 0, 0, 28.1317, 0, 103.581, 0, 0, 0, 0, 0, 0, 28.5177, 0, 101.398, 0, 0, 0, 0, 0, 0, 28.796, 0, 98.6776, 0, 0, 0, 0, 0, 0, 28.5893, 0, 96.7171, 0, 0, 0, 0, 0, 0, 27.94, 0, 94.5837, 0, 0, 0, 0, 0, 0, 27.1287, 0, 92.7409, 0, 0, 0, 0, 0, 0, 25.49, 0, 89.9582, 0, 0, 0, 0, 0, 0, 23.3418, -2.38419e-07, 87.499, 0, 0, 0, 0, 0, 0, 21.6956, 0, 86.1898, 0, 0, 0, 0, 0, 0, 18.0213, 0, 83.7244, 0, 0, 0, 0, 0, 0, 15.1851, 0, 81.9098, 0, 0, 0, 0, 0, 0, 13.0801, 0, 80.5799, 0, 0, 0, 0, 0, 0, 10.2974, 0, 79.5905, 0, 0, 0, 0, 0, 0, 7.29825, 0, 79.0339, 0, 0, 0, 0, 0, 0, 3.58799, 0, 78.5083, 0, 0, 0, 0, 0, 0, 1.01513, 0, 77.9997, 0, 0, 0, 0, 0, 0, -1.58205, 0, 77.3813, 0, 0, 0, 0, 0, 0, -4.14832, 0, 76.1445, 0, 0, 0, 0, 0, 0, -5.72518, 0, 74.815, 0, 0, 0, 0, 0, 0, -7.8173, 0, 72.19, 0, 0, 0, 0, 0, 0, -10.3217, 0, 69.3145, 0, 0, 0, 0, 0, 0, -12.423, 0, 66.2433, 0, 0, 0, 0, 0, 0, -12.9795, 0, 64.9756, 0, 0, 0, 0, 0, 0, -13.2887, 0, 63.2132, 0, 0, 0, 0, 0, 0, -13.5913, 0, 60.5061, 0, 0, 0, 0, 0, 0, -13.7409, 0, 57.9334, 0, 0, 0, 0, 0, 0, -13.7094, 0, 54.9014, 0, 0, 0, 0, 0, 0, -13.6302, 0, 52.2246, 0, 0, 0, 0, 0, 0, -13.2712, 0, 49.6818, 0, 0, 0, 0, 0, 0, -13.002, 0, 47.0493, 0, 0, 0, 0, 0, 0, -12.5233, 0, 44.2972, 0, 0, 0, 0, 0, 0, -11.886, 0, 41.8395, 0, 0, 0, 0, 0, 0, -10.7493, 0, 38.9078, 0, 0, 0, 0, 0, 0, -9.67232, 0, 37.2027, 0, 0, 0, 0, 0, 0, -7.48695, 0, 35.0149, 0, 0, 0, 0, 0, 0, -5.10724, 0, 33.1512, 0, 0, 0, 0, 0, 0, -1.83576, 0, 31.3987, 0, 0, 0, 0, 0, 0, 1.39678, 0, 30.1134, 0, 0, 0, 0, 0, 0, 4.51248, 0, 29.1398, 0, 0, 0, 0, 0, 0, -76.0863, 0, 19.9123, 0, 0, 0, 0, 0, 0, -92.0988, 0, 69.7636, 0, 0, 0, 0, 0, 0, -46.7984, 0, 89.7072),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 49
+
+[sub_resource type="Resource" id="Resource_fhbgg"]
+script = ExtResource("10_5hqlx")
+closed = true
+thickness = 0.0
+curve = SubResource("Curve3D_wtqsp")
+
+[sub_resource type="Curve3D" id="Curve3D_7cfnx"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 19.342, 0, 115.655, 0, 0, 0, 0, 0, 0, 23.1852, 0, 112.518, 0, 0, 0, 0, 0, 0, 26.1397, 0, 110.03, 0, 0, 0, 0, 0, 0, 28.1612, 0, 107.649, 0, 0, 0, 0, 0, 0, 29.3983, 0, 105.183, 0, 0, 0, 0, 0, 0, 30.1842, 0, 102.04, 0, 0, 0, 0, 0, 0, 30.3656, 0, 99.9237, 0, 0, 0, 0, 0, 0, 30.6074, 0, 96.5985, 0, 0, 0, 0, 0, 0, 29.4915, 0, 93.0583, 0, 0, 0, 0, 0, 0, 27.3157, 0, 88.617, 0, 0, 0, 0, 0, 0, 24.2324, 0, 85.2313, 0, 0, 0, 0, 0, 0, 20.8212, 0, 82.6839, 0, 0, 0, 0, 0, 0, 16.8017, 0, 80.0042, 0, 0, 0, 0, 0, 0, 12.5001, 0, 78.0298, 0, 0, 0, 0, 0, 0, 8.41009, 0, 76.9015, 0, 0, 0, 0, 0, 0, 3.81656, 0, 75.9614, 0, 0, 0, 0, 0, 0, -0.273466, 0, 75.4677, 0, 0, 0, 0, 0, 0, -2.31848, 0, 74.3395, 0, 0, 0, 0, 0, 0, -3.86987, 0, 72.7881, 0, 0, 0, 0, 0, 0, -6.28769, 0, 70.1936, 0, 0, 0, 0, 0, 0, -7.98011, 0, 68.0075, 0, 0, 0, 0, 0, 0, -9.5315, 0, 65.9625, 0, 0, 0, 0, 0, 0, -10.7303, 0, 63.847, 0, 0, 0, 0, 0, 0, -11.6623, 0, 58.7928, 0, 0, 0, 0, 0, 0, -10.9875, 0, 46.9974, 0, 0, 0, 0, 0, 0, -9.50663, 0, 40.8624, 0, 0, 0, 0, 0, 0, -7.21338, 0, 37.3319, 0, 0, 0, 0, 0, 0, -4.1106, 0, 34.7227, 0, 0, 0, 0, 0, 0, 0.402538, 0, 32.6072, 0, 0, 0, 0, 0, 0, 6.25551, 0, 30.3506, 0, 0, 0, 0, 0, 0, 102.856, 0, 52.3308, 0, 0, 0, 0, 0, 0, 67.1919, 0, 136.265),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 32
+
+[sub_resource type="Resource" id="Resource_nvfje"]
+script = ExtResource("10_5hqlx")
+closed = true
+thickness = 0.0
+curve = SubResource("Curve3D_7cfnx")
+
+[sub_resource type="Gradient" id="Gradient_4y4xl"]
+colors = PackedColorArray(0, 0, 0, 1, 0.476578, 0.476578, 0.476578, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_fwg8x"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_fjjff"]
+seamless = true
+as_normal_map = true
+color_ramp = SubResource("Gradient_4y4xl")
+noise = SubResource("FastNoiseLite_fwg8x")
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_v7fs4"]
+seamless = true
+color_ramp = SubResource("Gradient_4y4xl")
+noise = SubResource("FastNoiseLite_fwg8x")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6j7sx"]
+transparency = 1
+albedo_color = Color(0.520396, 0.731017, 0.791284, 0.0588235)
+roughness_texture = SubResource("NoiseTexture2D_v7fs4")
+normal_enabled = true
+normal_texture = SubResource("NoiseTexture2D_fjjff")
+refraction_texture = SubResource("NoiseTexture2D_v7fs4")
+uv1_scale = Vector3(10, 10, 10)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_e6dot"]
+material = SubResource("StandardMaterial3D_6j7sx")
+size = Vector2(10.815, 15.835)
 
 [node name="World" type="Node3D"]
+
+[node name="path" parent="." instance=ExtResource("1_y7dbq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5964, 0)
+visible = false
 
 [node name="grass1" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.8535, 0, -229.825)
 script = ExtResource("2_2fi15")
-modifier_stack = SubResource("Resource_nx875")
+modifier_stack = SubResource("Resource_21ie8")
 Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 
@@ -428,7 +774,7 @@ shape = SubResource("Resource_epbig")
 [node name="grass2" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.8535, 0, -229.825)
 script = ExtResource("2_2fi15")
-modifier_stack = SubResource("Resource_ttquo")
+modifier_stack = SubResource("Resource_751c5")
 Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 
@@ -451,7 +797,7 @@ shape = SubResource("Resource_0aqcb")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.8535, 0, -229.825)
 visible = false
 script = ExtResource("2_2fi15")
-modifier_stack = SubResource("Resource_mp1j8")
+modifier_stack = SubResource("Resource_17i1l")
 Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 
@@ -470,50 +816,140 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.6552, 0, 128.198)
 script = ExtResource("9_rqlbq")
 shape = SubResource("Resource_hmvej")
 
-[node name="tree1" type="Node3D" parent="."]
+[node name="treeLarge1" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.8535, 0, -229.825)
-visible = false
 script = ExtResource("2_2fi15")
-modifier_stack = SubResource("Resource_bnuyg")
+modifier_stack = SubResource("Resource_we2fk")
 Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 
-[node name="ScatterItem" type="Node3D" parent="tree1"]
+[node name="ScatterItem" type="Node3D" parent="treeLarge1"]
 script = ExtResource("8_vlah3")
-source_scale_multiplier = 0.4
+source_scale_multiplier = 0.5
 path = "res://assets/foliage/tree_1.tscn"
 
-[node name="ScatterShape" type="Node3D" parent="tree1"]
+[node name="ScatterShape" type="Node3D" parent="treeLarge1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.6552, 0, 128.198)
 script = ExtResource("9_rqlbq")
 shape = SubResource("Resource_wo2rr")
 
-[node name="ScatterShape2" type="Node3D" parent="tree1"]
+[node name="ScatterShape2" type="Node3D" parent="treeLarge1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.6552, 0, 128.198)
 script = ExtResource("9_rqlbq")
 shape = SubResource("Resource_qo7br")
 
-[node name="tree2" type="Node3D" parent="."]
+[node name="treeLarge2" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.8535, 0, -229.825)
-visible = false
 script = ExtResource("2_2fi15")
-modifier_stack = SubResource("Resource_50nh6")
+modifier_stack = SubResource("Resource_e7gi8")
 Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 
-[node name="ScatterItem" type="Node3D" parent="tree2"]
+[node name="ScatterItem" type="Node3D" parent="treeLarge2"]
 script = ExtResource("8_vlah3")
-source_scale_multiplier = 0.4
+source_scale_multiplier = 0.5
+path = "res://assets/foliage/tree_1.tscn"
+
+[node name="ScatterShape" type="Node3D" parent="treeLarge2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.6552, 0, 128.198)
+script = ExtResource("9_rqlbq")
+shape = SubResource("Resource_a0tf3")
+
+[node name="ScatterShape2" type="Node3D" parent="treeLarge2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.6552, 0, 128.198)
+script = ExtResource("9_rqlbq")
+shape = SubResource("Resource_pkf8i")
+
+[node name="treeSmall1" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.8535, 0, -229.825)
+script = ExtResource("2_2fi15")
+modifier_stack = SubResource("Resource_v1o6o")
+Performance/use_chunks = true
+Performance/chunk_dimensions = Vector3(15, 15, 15)
+
+[node name="ScatterItem" type="Node3D" parent="treeSmall1"]
+script = ExtResource("8_vlah3")
+source_scale_multiplier = 0.5
 path = "res://assets/foliage/tree_2.tscn"
 
-[node name="ScatterShape" type="Node3D" parent="tree2"]
+[node name="ScatterShape" type="Node3D" parent="treeSmall1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.6552, 0, 128.198)
 script = ExtResource("9_rqlbq")
-shape = SubResource("Resource_cfdb8")
+shape = SubResource("Resource_tagy1")
 
-[node name="ScatterShape2" type="Node3D" parent="tree2"]
+[node name="ScatterShape2" type="Node3D" parent="treeSmall1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.6552, 0, 128.198)
 script = ExtResource("9_rqlbq")
-shape = SubResource("Resource_8hysg")
+shape = SubResource("Resource_yhi8x")
 
-[node name="landscape" parent="." instance=ExtResource("10_onw66")]
+[node name="treeSmall2" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.8535, 0, -229.825)
+script = ExtResource("2_2fi15")
+modifier_stack = SubResource("Resource_wujal")
+Performance/use_chunks = true
+Performance/chunk_dimensions = Vector3(15, 15, 15)
+
+[node name="ScatterItem" type="Node3D" parent="treeSmall2"]
+script = ExtResource("8_vlah3")
+source_scale_multiplier = 0.5
+path = "res://assets/foliage/tree_2.tscn"
+
+[node name="ScatterShape" type="Node3D" parent="treeSmall2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.6552, 0, 128.198)
+script = ExtResource("9_rqlbq")
+shape = SubResource("Resource_vwpud")
+
+[node name="ScatterShape2" type="Node3D" parent="treeSmall2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.6552, 0, 128.198)
+script = ExtResource("9_rqlbq")
+shape = SubResource("Resource_jleo0")
+
+[node name="fern1" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.8535, 0, -229.825)
+script = ExtResource("2_2fi15")
+modifier_stack = SubResource("Resource_i1alq")
+Performance/use_chunks = true
+Performance/chunk_dimensions = Vector3(15, 15, 15)
+
+[node name="ScatterItem" type="Node3D" parent="fern1"]
+script = ExtResource("8_vlah3")
+source_scale_multiplier = 3.0
+path = "res://assets/foliage/fern_1.tscn"
+
+[node name="ScatterShape" type="Node3D" parent="fern1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.6552, 0, 128.198)
+script = ExtResource("9_rqlbq")
+shape = SubResource("Resource_etdep")
+
+[node name="ScatterShape2" type="Node3D" parent="fern1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.6552, 0, 128.198)
+script = ExtResource("9_rqlbq")
+shape = SubResource("Resource_jqcn1")
+
+[node name="fern2" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.8535, 0, -229.825)
+script = ExtResource("2_2fi15")
+modifier_stack = SubResource("Resource_1bvqs")
+Performance/use_chunks = true
+Performance/chunk_dimensions = Vector3(15, 15, 15)
+
+[node name="ScatterItem" type="Node3D" parent="fern2"]
+script = ExtResource("8_vlah3")
+source_scale_multiplier = 3.0
+path = "res://assets/foliage/fern_1.tscn"
+
+[node name="ScatterShape" type="Node3D" parent="fern2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.6552, 0, 128.198)
+script = ExtResource("9_rqlbq")
+shape = SubResource("Resource_fhbgg")
+
+[node name="ScatterShape2" type="Node3D" parent="fern2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.6552, 0, 128.198)
+script = ExtResource("9_rqlbq")
+shape = SubResource("Resource_nvfje")
+
+[node name="landscape" parent="." instance=ExtResource("10_8bn4f")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.0628, 0.114735, 22.8491)
+mesh = SubResource("PlaneMesh_e6dot")

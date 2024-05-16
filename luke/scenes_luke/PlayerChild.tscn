@@ -49,7 +49,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.708612)
 
 [node name="AttackMarker" type="Marker3D" parent="Head/PlayerCam"]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.83407)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.40703)
 
 [node name="PlayerInfoLabel" type="Label3D" parent="Head/PlayerCam"]
 unique_name_in_owner = true

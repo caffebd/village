@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://qgbj73vixll4"]
+[gd_scene load_steps=19 format=3 uid="uid://qgbj73vixll4"]
 
 [ext_resource type="Script" path="res://luke/scripts_luke/village.gd" id="1_52nm1"]
 [ext_resource type="PackedScene" uid="uid://ds8jitdfn8yuj" path="res://assets/path.tscn" id="2_7n3rm"]
@@ -23,6 +23,9 @@ material = SubResource("StandardMaterial3D_b12jx")
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_sr1r6"]
 height = 0.33
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_lyhi0"]
+size = Vector3(10.625, 1, 0.06)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_1fo8h"]
 size = Vector3(2.59, 0.565, 0.65)
 
@@ -46,7 +49,7 @@ top_mound_marker = NodePath("../DadTopMound")
 sitting_log = NodePath("../Clearing/SittingLog")
 
 [node name="PlayerChild" parent="." node_paths=PackedStringArray("attack_marker", "rotate_marker", "lunge_marker", "start_clearing_marker") instance=ExtResource("14_k0c81")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.3775, 2.44286, -183.737)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60.417, 2.44286, -187.306)
 attack_marker = NodePath("Head/PlayerCam/AttackMarker")
 rotate_marker = NodePath("RotateMarker")
 lunge_marker = NodePath("Head/PlayerCam/LungeMarker")
@@ -90,9 +93,18 @@ shape = SubResource("CylinderShape3D_sr1r6")
 transform = Transform3D(0.00462511, 0, 0.999989, 0, 1, 0, -0.999989, 0, 0.00462511, -58.0621, 8.50151, -228.693)
 
 [node name="Log" parent="." instance=ExtResource("6_n54h1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -62.3256, 1.42125, -191.833)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -61.7861, 1.60721, -191.857)
 
 [node name="environment" parent="." instance=ExtResource("6_efe2g")]
+
+[node name="LedgeWall" type="StaticBody3D" parent="."]
+transform = Transform3D(0.985715, 0, 0.168421, 0, 1, 0, -0.168421, 0, 0.985715, -59.6233, 1.42125, -193.378)
+collision_layer = 8
+collision_mask = 8
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LedgeWall"]
+transform = Transform3D(0.998905, 0, -0.0467752, 0, 1, 0, 0.0467752, 0, 0.998905, 0, 0, 0)
+shape = SubResource("BoxShape3D_lyhi0")
 
 [node name="PlayerClearing" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -59.3689, 8.65303, -228.644)

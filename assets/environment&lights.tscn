@@ -1,18 +1,19 @@
 [gd_scene load_steps=2 format=3 uid="uid://dplf8d8w78la4"]
 
-[ext_resource type="Environment" uid="uid://bnu6ciq241yuv" path="res://assets/env/env3.tres" id="1_0q1gt"]
+[ext_resource type="Environment" uid="uid://b4v0lbij74xam" path="res://assets/env/env_night.tres" id="1_ocki3"]
 
 [node name="environment" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = ExtResource("1_0q1gt")
+environment = ExtResource("1_ocki3")
 
 [node name="sun" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.896657, 0.219353, 0.384567, 3.55271e-15, -0.868631, 0.495459, 0.442727, -0.444256, -0.778864, -6.678, 2.75738, -2.17394)
+transform = Transform3D(0.9827, -0.0917609, -0.160874, -1.66582e-09, -0.868631, 0.495459, -0.185204, -0.486887, -0.853604, -6.678, 2.75738, -2.17394)
 visible = false
 light_color = Color(0.849231, 0.717222, 0.557243, 1)
 light_energy = 0.17
 light_volumetric_fog_energy = 2.75
+light_bake_mode = 1
 shadow_enabled = true
 shadow_bias = 0.012
 directional_shadow_mode = 0
