@@ -60,7 +60,7 @@ var heldObject: RigidBody3D
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	GlobalSignals.start_clearing.connect(_start_clearing)
-	head.rotation_degrees.y = 90.0
+	head.rotation_degrees.y = 0.0
 
 
 func _start_clearing():

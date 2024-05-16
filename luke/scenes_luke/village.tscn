@@ -40,20 +40,20 @@ script = ExtResource("1_52nm1")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.240359, 0)
 visible = false
 
-[node name="Father" parent="." node_paths=PackedStringArray("check_points", "clearing_check_points", "player", "top_mound_marker", "sitting_log") instance=ExtResource("4_ik3vd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.1918, 1.51539, -186.061)
-check_points = [NodePath("../FatherCheckPoints/Check0"), NodePath("../FatherCheckPoints/Check1"), NodePath("../FatherCheckPoints/Check2"), NodePath("../FatherCheckPoints/Check3"), NodePath("../FatherCheckPoints/CheckEnd")]
-clearing_check_points = [NodePath("../FatherCheckPointsClearing/CheckM0"), NodePath("../FatherCheckPointsClearing/CheckM1"), NodePath("../FatherCheckPointsClearing/CheckM2"), NodePath("../FatherCheckPointsClearing/CheckM3")]
-player = NodePath("../PlayerChild")
-top_mound_marker = NodePath("../DadTopMound")
-sitting_log = NodePath("../Clearing/SittingLog")
-
 [node name="PlayerChild" parent="." node_paths=PackedStringArray("attack_marker", "rotate_marker", "lunge_marker", "start_clearing_marker") instance=ExtResource("14_k0c81")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60.417, 2.44286, -187.306)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44.7155, 1.10188, 56.4027)
 attack_marker = NodePath("Head/PlayerCam/AttackMarker")
 rotate_marker = NodePath("RotateMarker")
 lunge_marker = NodePath("Head/PlayerCam/LungeMarker")
 start_clearing_marker = NodePath("../PlayerClearing")
+
+[node name="Father" parent="." node_paths=PackedStringArray("check_points", "clearing_check_points", "player", "top_mound_marker", "sitting_log") instance=ExtResource("4_ik3vd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43.0556, -0.0243156, 50.0593)
+check_points = [NodePath("../FatherCheckPoints/Check0"), NodePath("../FatherCheckPoints/Check1"), NodePath("../FatherCheckPoints/Check2"), NodePath("../FatherCheckPoints/Check3"), NodePath("../FatherCheckPoints/Check4"), NodePath("../FatherCheckPoints/Check5"), NodePath("../FatherCheckPoints/Check6"), NodePath("../FatherCheckPoints/CheckEnd")]
+clearing_check_points = [NodePath("../FatherCheckPointsClearing/CheckM0"), NodePath("../FatherCheckPointsClearing/CheckM1"), NodePath("../FatherCheckPointsClearing/CheckM2"), NodePath("../FatherCheckPointsClearing/CheckM3")]
+player = NodePath("../PlayerChild")
+top_mound_marker = NodePath("../DadTopMound")
+sitting_log = NodePath("../Clearing/SittingLog")
 
 [node name="Clearing" type="Node3D" parent="."]
 
@@ -115,16 +115,25 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -59.8298, 2.32622, -194.865)
 [node name="FatherCheckPoints" type="Node3D" parent="."]
 
 [node name="Check0" type="Marker3D" parent="FatherCheckPoints"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42.5289, 1.39323, -186.416)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42.7649, -0.0243156, 46.0621)
 
 [node name="Check1" type="Marker3D" parent="FatherCheckPoints"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48.0269, 1.50794, -185.488)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.7921, -0.0243156, 41.3494)
 
 [node name="Check2" type="Marker3D" parent="FatherCheckPoints"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.1908, 1.50794, -185.488)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.5427, -0.0243156, 38.8265)
 
 [node name="Check3" type="Marker3D" parent="FatherCheckPoints"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -59.3796, 1.50794, -184.182)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.4607, -0.0243156, 37.6924)
+
+[node name="Check4" type="Marker3D" parent="FatherCheckPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.2206, -0.0639189, 38.3425)
+
+[node name="Check5" type="Marker3D" parent="FatherCheckPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.6843, -0.0639189, 43.8816)
+
+[node name="Check6" type="Marker3D" parent="FatherCheckPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.0918, -0.0639189, 46.0811)
 
 [node name="CheckEnd" type="Marker3D" parent="FatherCheckPoints"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60.2998, 1.67154, -187.716)
