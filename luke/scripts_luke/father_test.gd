@@ -183,7 +183,7 @@ func _next_position():
 		GlobalSignals.emit_signal("hide_speech")
 		curr_anim = WALK
 		#$AnimationPlayer.play("mixamo_com")
-		print ("new CHEC")
+		print (use_check_points[check_index].name)
 		check_index += 1
 	else:
 		check_index = 0
