@@ -1,17 +1,20 @@
 extends Control
 @onready var target: TextureRect = %target
 @onready var text_box: ColorRect = %TextBackground
+@onready var narration_box: ColorRect = %NarrationBackground
 
 @export var use_fade: bool = true
 
 var target_mode = "off"
 
-
+var narration_showing: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	GlobalSignals.show_speech.connect(_show_speech)
 	GlobalSignals.hide_speech.connect(_hide_speech)
+	GlobalSignals.show_narration.connect(_show_narration)
+	GlobalSignals.hide_narration.connect(_hide_narration)
 	GlobalSignals.start_game.connect(_start_game)
 	%TextBackground.modulate.a = 0.0
 	if use_fade:
@@ -21,7 +24,9 @@ func _ready() -> void:
 		var tween = create_tween()
 		tween.tween_property(%Title, "modulate:a", 1.0, 2.0)
 
-
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("use") and narration_showing:
+		_hide_narration()
 
 func _start_game():
 	_use_fade_in()
@@ -32,9 +37,25 @@ func _show_speech(text: String):
 	tween.tween_property(text_box, "modulate:a", 1.0, 2.0)
 	
 
+func _show_narration(text: String):
+	if narration_showing:
+		narration_showing = false
+		var tween_hide = create_tween()
+		tween_hide.tween_property(narration_box, "modulate:a", 0.0, 0.5)
+		await tween_hide.finished
+	narration_showing = true
+	%Narration.text = text
+	var tween = create_tween()
+	tween.tween_property(narration_box, "modulate:a", 1.0, 2.0)
+
 func _hide_speech():
 	var tween = create_tween()
 	tween.tween_property(text_box, "modulate:a", 0.0, 1.0)
+
+func _hide_narration():
+	narration_showing = false
+	var tween = create_tween()
+	tween.tween_property(narration_box, "modulate:a", 0.0, 1.0)
 
 func _use_fade_in():
 	var tween = create_tween()

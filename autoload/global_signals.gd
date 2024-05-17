@@ -12,6 +12,14 @@ signal  stick_drop()
 signal show_speech(text)
 signal hide_speech()
 
+signal show_narration(text)
+signal hide_narration()
+
+signal change_dad_max_dist(dist)
+
+signal dad_repeat_log(state)
+signal log_emit()
+
 signal time_transition_0
 signal time_transition_1
 signal time_transition_2

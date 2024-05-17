@@ -43,6 +43,7 @@ func _ready() -> void:
 	GlobalSignals.dad_to_mound.connect(_dad_to_mound)
 	GlobalSignals.dad_to_clearing.connect(_dad_to_clearing)
 	GlobalSignals.start_clearing.connect(_start_clearing)
+	GlobalSignals.dad_repeat_log.connect(_dad_repeat_log)
 	use_check_points = check_points
 	$AnimationPlayer.play("mixamo_com")
 	$AnimationPlayer.pause()
@@ -61,13 +62,21 @@ func _start_clearing():
 func _dad_to_mound():
 	walking = false
 	curr_anim = STANDING
+	to_mound = false
 	global_position = top_mound_marker.global_position
 	rotation_degrees.y = 0.0
 
 
 func _dad_to_clearing():
+	_dad_repeat_log(false)
 	use_check_points = clearing_check_points
 	_next_position()	
+
+func _dad_repeat_log(state):
+	if state:
+		%RepeatLogTimer.start()
+	else:
+		%RepeatLogTimer.stop()
 
 func _update_tree():
 	anim_tree["parameters/BlendTurn/blend_amount"] = turn_value
@@ -184,6 +193,7 @@ func _next_position():
 		curr_anim = WALK
 		#$AnimationPlayer.play("mixamo_com")
 		print (use_check_points[check_index].name)
+		_check_for_narration(use_check_points[check_index].name)
 		check_index += 1
 	else:
 		check_index = 0
@@ -192,6 +202,22 @@ func _next_position():
 			GlobalSignals.emit_signal("dad_to_mound")
 		else:
 			_sit_down()
+			await get_tree().create_timer(3.0).timeout
+			GlobalSignals.emit_signal("show_speech", "Saif, find me 3 sticks. I want to show you something.")
+
+func _check_for_narration(check_point: String):
+	match check_point:
+		"Check10":
+			GlobalSignals.emit_signal("show_narration", "My dad was the only one who called me Saif instead of Saiful.")
+		"Check15":
+			GlobalSignals.emit_signal("show_narration", "My dad always liked to take me on long walks through the forest...")
+		"Check18":
+			GlobalSignals.emit_signal("show_narration", "but that day we went further than we had ever been before.")
+		"Check23":
+			GlobalSignals.emit_signal("change_dad_max_dist", 18.5)
+		"CheckEnd":
+			GlobalSignals.emit_signal("show_narration", "For a second I panicked when I lost sight of my dad.")
+
 
 func _on_walk_timer_timeout() -> void:
 	can_turn = true
@@ -201,3 +227,8 @@ func _on_walk_timer_timeout() -> void:
 
 func _on_speech_timer_timeout() -> void:
 	GlobalSignals.emit_signal("show_speech", "Come on Saif, keep up!")
+
+
+func _on_repeat_log_timer_timeout() -> void:
+	GlobalSignals.emit_signal("log_emit")
+	GlobalSignals.emit_signal("show_speech", "Come on Saif, drag that log over and use it to climb up.")
