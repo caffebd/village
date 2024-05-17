@@ -1,5 +1,6 @@
 extends Control
 @onready var target: TextureRect = %target
+@onready var text_box: ColorRect = %TextBackground
 
 @export var use_fade: bool = true
 
@@ -9,13 +10,31 @@ var target_mode = "off"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	GlobalSignals.show_speech.connect(_show_speech)
+	GlobalSignals.hide_speech.connect(_hide_speech)
+	GlobalSignals.start_game.connect(_start_game)
+	%TextBackground.modulate.a = 0.0
 	if use_fade:
 		$Cover.modulate.a = 1.0
 		$TopLid.position.y = 0.0
 		$BottomLid.position.y = 540.0
-		await get_tree().create_timer(5.0)
-		_use_fade_in()
+		var tween = create_tween()
+		tween.tween_property(%Title, "modulate:a", 1.0, 2.0)
 
+
+
+func _start_game():
+	_use_fade_in()
+
+func _show_speech(text: String):
+	%Speech.text = text
+	var tween = create_tween()
+	tween.tween_property(text_box, "modulate:a", 1.0, 2.0)
+	
+
+func _hide_speech():
+	var tween = create_tween()
+	tween.tween_property(text_box, "modulate:a", 0.0, 1.0)
 
 func _use_fade_in():
 	var tween = create_tween()

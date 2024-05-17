@@ -36,6 +36,8 @@ script = ExtResource("1_52nm1")
 
 [node name="World" parent="." instance=ExtResource("2_kcl2j")]
 
+[node name="environment" parent="." instance=ExtResource("6_efe2g")]
+
 [node name="path" parent="." instance=ExtResource("2_7n3rm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.240359, 0)
 visible = false
@@ -94,8 +96,6 @@ transform = Transform3D(0.00462511, 0, 0.999989, 0, 1, 0, -0.999989, 0, 0.004625
 
 [node name="Log" parent="." instance=ExtResource("6_n54h1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -61.7861, 1.60721, -191.857)
-
-[node name="environment" parent="." instance=ExtResource("6_efe2g")]
 
 [node name="LedgeWall" type="StaticBody3D" parent="."]
 transform = Transform3D(0.985715, 0, 0.168421, 0, 1, 0, -0.168421, 0, 0.985715, -59.6233, 1.42125, -193.378)

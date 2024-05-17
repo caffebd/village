@@ -5,7 +5,9 @@ var fade_in: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
+	await get_tree().create_timer(10.0).timeout
+	GlobalSignals.emit_signal("start_game")
+
 	#GlobalSignals.emit_signal("start_clearing")
 	#var tween = create_tween().parallel()
 	#tween.tween_property($WorldEnvironment, "environment:sky:sky_material:sky_top_color", Color("327085"), 2.0)

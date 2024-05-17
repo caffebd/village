@@ -133,6 +133,8 @@ func _physics_process(delta: float) -> void:
 				speed = lerp(speed, 4.0, 0.5)
 				velocity = direction * speed
 				curr_anim = WALK
+				GlobalSignals.emit_signal("hide_speech")
+				$SpeechTimer.stop()
 				if not is_on_floor():
 					velocity.y -= gravity * delta
 				move_and_slide()
@@ -141,6 +143,7 @@ func _physics_process(delta: float) -> void:
 					#print ("turn")
 					can_turn = false
 					curr_anim = TURN
+					$SpeechTimer.start()
 					speed = lerp(speed, 0.0, 1.0)
 					velocity = direction * speed
 					if not is_on_floor():
@@ -159,12 +162,15 @@ func _input(event: InputEvent) -> void:
 		var tween = create_tween()
 		tween.tween_property(self, "rotation_degrees:y", 90.0, 1.0)
 		#rotation_degrees.y = lerp(rotation_degrees.y, rotation_degrees.y+90.0, 0.2)
+		
 		curr_anim = SITTING
 
 func _sit_down():
 	walking = false
 	var tween = create_tween()
 	tween.tween_property(self, "rotation_degrees:y", 270.0, 1.0)
+	$SpeechTimer.stop()
+	GlobalSignals.emit_signal("hide_speech")
 	#rotation_degrees.y = lerp(rotation_degrees.y, rotation_degrees.y+90.0, 0.2)
 	curr_anim = SITTING
 
@@ -173,6 +179,8 @@ func _next_position():
 		target_position = use_check_points[check_index].global_position
 		#get_tree().create_timer(0.2).timeout
 		walking = true
+		$SpeechTimer.stop()
+		GlobalSignals.emit_signal("hide_speech")
 		curr_anim = WALK
 		#$AnimationPlayer.play("mixamo_com")
 		print ("new CHEC")
@@ -189,3 +197,7 @@ func _on_walk_timer_timeout() -> void:
 	can_turn = true
 
 
+
+
+func _on_speech_timer_timeout() -> void:
+	GlobalSignals.emit_signal("show_speech", "Come on Saif, keep up!")

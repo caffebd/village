@@ -16,6 +16,8 @@ func _ready() -> void:
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("use") and not freeze:
 		text_index += 1
+		if text_index == text_boxes.size()-1:
+			GlobalScene.start_bg_music()
 		if text_index < text_boxes.size():
 			freeze = true
 			var box_out = text_boxes[text_index-1]
@@ -34,4 +36,9 @@ func _input(event: InputEvent) -> void:
 
 
 func _on_skip_btn_pressed() -> void:
+	freeze = true
+	GlobalScene.start_bg_music()
+	var tween = create_tween()
+	tween.tween_property($Cover, "modulate:a", 1.0, 2.0)
+	await tween.finished
 	get_tree().change_scene_to_file("res://luke/scenes_luke/village.tscn")

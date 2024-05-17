@@ -1,11 +1,16 @@
 extends Node
 
+signal start_game()
+
 signal dad_to_mound()
 signal dad_to_clearing()
 
 signal start_clearing()
 
 signal  stick_drop()
+
+signal show_speech(text)
+signal hide_speech()
 
 signal time_transition_0
 signal time_transition_1
