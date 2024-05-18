@@ -7,7 +7,7 @@ func _ready() -> void:
 	await get_tree().create_timer(10.0).timeout
 	GlobalSignals.emit_signal("start_game")
 	#GlobalSignals.emit_signal("dad_to_mound")
-	#GlobalSignals.emit_signal("start_clearing")
+	GlobalSignals.emit_signal("start_clearing")
 	#var tween = create_tween().parallel()
 	#tween.tween_property($WorldEnvironment, "environment:sky:sky_material:sky_top_color", Color("327085"), 2.0)
 	#tween.tween_property($WorldEnvironment, "environment:sky:sky_material:sky_horizon_color", Color("000000"), 2.0)

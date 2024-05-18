@@ -68,7 +68,7 @@ var joy_rotate_y : float = 0.0
 
 var last_distance: float = 0.0
 
-var following_dad: bool = true
+var following_dad: bool = false
 
 #end head wobble settings
 
