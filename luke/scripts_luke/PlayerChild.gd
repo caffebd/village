@@ -143,7 +143,7 @@ func _physics_process(delta):
 	if following_dad:
 	
 		var dist = global_position.distance_to(father.global_position)
-		print (dist)
+		#print (dist)
 		if dist > max_dad_dist:
 			if not too_far:
 				GlobalSignals.emit_signal("show_narration", "I didn't want to go too far from dad.")

@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://luke/scripts_luke/village.gd" id="1_52nm1"]
 [ext_resource type="PackedScene" uid="uid://ds8jitdfn8yuj" path="res://assets/path.tscn" id="2_7n3rm"]
 [ext_resource type="PackedScene" uid="uid://uwgt08apwad6" path="res://scenes/ScreenEffect.tscn" id="2_7x1u4"]
-[ext_resource type="PackedScene" uid="uid://bvvre0p6auulq" path="res://scenes/world.tscn" id="2_kcl2j"]
+[ext_resource type="PackedScene" uid="uid://bvvre0p6auulq" path="res://assets/world.tscn" id="2_kcl2j"]
 [ext_resource type="PackedScene" uid="uid://df623wi4323mu" path="res://luke/scenes_luke/father_test.tscn" id="4_ik3vd"]
 [ext_resource type="PackedScene" uid="uid://dplf8d8w78la4" path="res://assets/environment&lights.tscn" id="6_efe2g"]
 [ext_resource type="PackedScene" uid="uid://btdf8my7v3yqn" path="res://luke/scenes_luke/log.tscn" id="6_n54h1"]
@@ -44,8 +44,7 @@ script = ExtResource("1_52nm1")
 [node name="environment" parent="." instance=ExtResource("6_efe2g")]
 
 [node name="path" parent="." instance=ExtResource("2_7n3rm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.240359, 0)
-visible = false
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.34267, 0)
 
 [node name="PlayerChild" parent="." node_paths=PackedStringArray("attack_marker", "rotate_marker", "lunge_marker", "father", "start_mound_marker", "start_clearing_marker") instance=ExtResource("14_k0c81")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.7541, 2.08273, 592.364)

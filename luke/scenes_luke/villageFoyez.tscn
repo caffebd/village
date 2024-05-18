@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" path="res://luke/scripts_luke/village.gd" id="1_x4ou0"]
 [ext_resource type="PackedScene" uid="uid://uwgt08apwad6" path="res://scenes/ScreenEffect.tscn" id="2_dlel6"]
-[ext_resource type="PackedScene" uid="uid://bvvre0p6auulq" path="res://scenes/world.tscn" id="3_36ht3"]
+[ext_resource type="PackedScene" uid="uid://bvvre0p6auulq" path="res://assets/world.tscn" id="3_36ht3"]
 [ext_resource type="PackedScene" uid="uid://dplf8d8w78la4" path="res://assets/environment&lights.tscn" id="4_5atc4"]
-[ext_resource type="PackedScene" uid="uid://ds8jitdfn8yuj" path="res://assets/path.tscn" id="5_qagj5"]
+[ext_resource type="PackedScene" uid="uid://ds8jitdfn8yuj" path="res://assets/path_old.tscn" id="5_qagj5"]
 [ext_resource type="PackedScene" uid="uid://doxkrnuvvwqhc" path="res://luke/scenes_luke/PlayerChild.tscn" id="6_prhbu"]
 [ext_resource type="PackedScene" uid="uid://df623wi4323mu" path="res://luke/scenes_luke/father_test.tscn" id="7_gexux"]
 [ext_resource type="PackedScene" uid="uid://cgd8lcv552lbu" path="res://luke/scenes_luke/stick.tscn" id="8_s2dq7"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://1r0ah5m40y1d" path="res://luke/scenes_luke/SittingLog.tscn" id="11_v4ril"]
 [ext_resource type="PackedScene" uid="uid://btdf8my7v3yqn" path="res://luke/scenes_luke/log.tscn" id="12_r04lv"]
 [ext_resource type="Script" path="res://luke/scripts_luke/climbed_mound.gd" id="13_by60a"]
+
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b12jx"]
 albedo_color = Color(0.42, 0.1722, 0.1722, 1)

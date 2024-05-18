@@ -1,6 +1,5 @@
 extends Node3D
 
-#comment for push
 var fade_in: bool = false
 
 # Called when the node enters the scene tree for the first time.
