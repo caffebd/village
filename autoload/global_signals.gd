@@ -20,6 +20,8 @@ signal change_dad_max_dist(dist)
 signal dad_repeat_log(state)
 signal log_emit()
 
+signal clearing_trigger_orb()
+
 signal time_transition_0
 signal time_transition_1
 signal time_transition_2

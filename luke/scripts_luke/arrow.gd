@@ -18,7 +18,10 @@ func _stick_drop():
 		await get_tree().create_timer(5).timeout
 		GlobalSignals.emit_signal("hide_speech")
 		GlobalSignals.emit_signal("show_narration", "Dad always liked to teach me something when we went walking.")
-
+		await get_tree().create_timer(8).timeout
+		GlobalSignals.emit_signal("show_narration", "I suddenly realised I lost the 10 Taka note my dad gave me, I had to find it.")
+		await get_tree().create_timer(10).timeout
+		GlobalSignals.emit_signal("clearing_trigger_orb")
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass

@@ -70,12 +70,15 @@ var last_distance: float = 0.0
 
 var following_dad: bool = false
 
+var can_trigger_orb: bool = false
+
 #end head wobble settings
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	GlobalSignals.start_clearing.connect(_start_clearing)
 	GlobalSignals.change_dad_max_dist.connect(_change_dad_max_dist)
+	GlobalSignals.clearing_trigger_orb.connect(_clearing_trigger_orb)
 	#GlobalSignals.dad_to_mound.connect(_start_mound)
 	head.rotation_degrees.y = 0.0
 	last_distance = global_position.distance_to(father.global_position)
@@ -87,6 +90,8 @@ func _start_mound():
 func _start_clearing():
 	global_position = start_clearing_marker.global_position
 
+func _clearing_trigger_orb():
+	can_trigger_orb = true
 							
 func _input(event):
 	if event is InputEventMouseMotion:
@@ -243,7 +248,14 @@ func _hud_target():
 		if collider.is_in_group("highlight"):
 			hud.target.modulate = Color(1,1,1,1)
 		else:
-			hud.target.modulate = Color(1,1,1,0.2)	
+			hud.target.modulate = Color(1,1,1,0.2)
+		print (collider.name)
+		if collider.is_in_group("orb"):
+			collider.orb_collider.set_deferred("disabled", true)
+			can_trigger_orb = false
+			GlobalSignals.emit_signal("show_narration", "While I was looking, I saw something glowing.")
+			await get_tree().create_timer(5.0).timeout
+			collider.sense_player = true
 	else:
 		hud.target.modulate = Color(1,1,1,0.2)	
 func set_held_object(body):

@@ -4,7 +4,7 @@ var fade_in: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	await get_tree().create_timer(10.0).timeout
+	await get_tree().create_timer(1.0).timeout
 	GlobalSignals.emit_signal("start_game")
 	#GlobalSignals.emit_signal("dad_to_mound")
 	GlobalSignals.emit_signal("start_clearing")
