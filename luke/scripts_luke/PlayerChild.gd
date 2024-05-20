@@ -35,6 +35,7 @@ var constant_wobble:bool = false
 
 @export var start_mound_marker: Marker3D
 @export var start_clearing_marker: Marker3D
+@export var start_night_path_marker: Marker3D
 
 @export var throwForce = 0.3
 @export var followSpeed = 10.0
@@ -79,6 +80,8 @@ func _ready():
 	GlobalSignals.start_clearing.connect(_start_clearing)
 	GlobalSignals.change_dad_max_dist.connect(_change_dad_max_dist)
 	GlobalSignals.clearing_trigger_orb.connect(_clearing_trigger_orb)
+	GlobalSignals.father_gone.connect(_father_gone)
+	GlobalSignals.night_path_set_up.connect(_night_path_set_up)
 	#GlobalSignals.dad_to_mound.connect(_start_mound)
 	head.rotation_degrees.y = 0.0
 	last_distance = global_position.distance_to(father.global_position)
@@ -94,6 +97,15 @@ func _start_clearing():
 
 func _clearing_trigger_orb():
 	can_trigger_orb = true
+
+func _father_gone():
+	following_dad = false
+
+func _night_path_set_up():
+	following_dad = false
+	can_trigger_orb = false
+	GlobalSignals.emit_signal("father_gone")
+	global_position = start_night_path_marker.global_position
 							
 func _input(event):
 	if event is InputEventMouseMotion:
@@ -260,9 +272,10 @@ func _hud_target():
 			Narration.main_index = Narration.orb_index
 			Narration.sub_index = 0
 			Narration.narrate()
+			GlobalSignals.emit_signal("father_gone")
 			#GlobalSignals.emit_signal("show_narration", "While I was looking, I saw something glowing.")
-			await get_tree().create_timer(5.0).timeout
-			collider.sense_player = true
+			#await get_tree().create_timer(5.0).timeout
+			#collider.sense_player = true
 	else:
 		hud.target.modulate = Color(1,1,1,0.2)	
 func set_held_object(body):
@@ -270,6 +283,7 @@ func set_held_object(body):
 		if body.is_in_group("pick_item"):
 			heldObject = body
 			heldObject.held = true
+			heldObject.my_collision.disabled = true
 	
 func drop_held_object():
 	heldObject = null
@@ -279,6 +293,7 @@ func throw_held_object():
 	heldObject.held = false
 	drop_held_object()
 	obj.apply_central_impulse(-camera.global_basis.z * throwForce * 10)
+	obj.my_collision.disabled = false
 	
 func handle_holding_objects():
 	# Throwing Objects
@@ -287,8 +302,7 @@ func handle_holding_objects():
 		
 	# Dropping Objects
 	if Input.is_action_just_pressed("use"):
-		if heldObject != null: drop_held_object()
-		elif ray.is_colliding(): set_held_object(ray.get_collider())
+		if ray.is_colliding(): set_held_object(ray.get_collider())
 		
 	# Object Following
 	if heldObject != null:

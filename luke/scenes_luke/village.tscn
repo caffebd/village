@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://qgbj73vixll4"]
+[gd_scene load_steps=28 format=3 uid="uid://qgbj73vixll4"]
 
 [ext_resource type="Script" path="res://luke/scripts_luke/village.gd" id="1_52nm1"]
 [ext_resource type="PackedScene" uid="uid://ds8jitdfn8yuj" path="res://assets/path.tscn" id="2_7n3rm"]
@@ -13,11 +13,13 @@
 [ext_resource type="Script" path="res://luke/scripts_luke/stick_drop_area.gd" id="8_8v8b4"]
 [ext_resource type="Script" path="res://luke/scripts_luke/arrow.gd" id="8_33w2u"]
 [ext_resource type="PackedScene" uid="uid://1r0ah5m40y1d" path="res://luke/scenes_luke/SittingLog.tscn" id="8_my4o7"]
+[ext_resource type="Script" path="res://luke/scripts_luke/see_dad_gone_area.gd" id="12_xt7f5"]
 [ext_resource type="Script" path="res://luke/scripts_luke/dad_speak_area.gd" id="14_1i5ef"]
+[ext_resource type="Script" path="res://luke/scripts_luke/exit_path_trigger.gd" id="14_e0drn"]
 [ext_resource type="PackedScene" uid="uid://doxkrnuvvwqhc" path="res://luke/scenes_luke/PlayerChild.tscn" id="14_k0c81"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_sr1r6"]
-height = 0.33
+height = 1.385
 radius = 0.905
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b12jx"]
@@ -25,6 +27,12 @@ albedo_color = Color(0.42, 0.1722, 0.1722, 1)
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_r5iw5"]
 material = SubResource("StandardMaterial3D_b12jx")
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_5vkaj"]
+radius = 8.0
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_v7he5"]
+radius = 5.305
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lyhi0"]
 size = Vector3(10.625, 1, 0.06)
@@ -51,8 +59,9 @@ script = ExtResource("1_52nm1")
 
 [node name="path" parent="." instance=ExtResource("2_7n3rm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.34267, 0)
+visible = false
 
-[node name="PlayerChild" parent="." node_paths=PackedStringArray("attack_marker", "rotate_marker", "lunge_marker", "father", "start_mound_marker", "start_clearing_marker") instance=ExtResource("14_k0c81")]
+[node name="PlayerChild" parent="." node_paths=PackedStringArray("attack_marker", "rotate_marker", "lunge_marker", "father", "start_mound_marker", "start_clearing_marker", "start_night_path_marker") instance=ExtResource("14_k0c81")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.7541, 2.08273, 592.364)
 attack_marker = NodePath("Head/PlayerCam/AttackMarker")
 rotate_marker = NodePath("RotateMarker")
@@ -60,6 +69,7 @@ lunge_marker = NodePath("Head/PlayerCam/LungeMarker")
 father = NodePath("../Father")
 start_mound_marker = NodePath("../Ledge/PlayerToMound")
 start_clearing_marker = NodePath("../Clearing/PlayerClearing")
+start_night_path_marker = NodePath("../NightPath/PlayerNightPath")
 
 [node name="Father" parent="." node_paths=PackedStringArray("check_points", "clearing_check_points", "player", "top_mound_marker", "sitting_log") instance=ExtResource("4_ik3vd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.8218, 0.885342, 584.845)
@@ -71,8 +81,8 @@ sitting_log = NodePath("../Clearing/SittingLog")
 
 [node name="Orb" parent="." node_paths=PackedStringArray("clearing_markers", "path_one_markers", "player") instance=ExtResource("8_5d4jk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -73.575, 4.72011, 452.751)
-clearing_markers = [NodePath("../Clearing/OrbClearingMarkers/OrbC1"), NodePath("../Clearing/OrbClearingMarkers/OrbC2"), NodePath("../Clearing/OrbClearingMarkers/OrbC3"), NodePath("../Clearing/OrbClearingMarkers/OrbC4"), NodePath("../Clearing/OrbClearingMarkers/OrbC5")]
-path_one_markers = [NodePath("../PathNight/OrbNight1"), NodePath("../PathNight/OrbNight2"), NodePath("../PathNight/OrbNight3")]
+clearing_markers = [NodePath("../Clearing/OrbClearingMarkers/OrbC1"), NodePath("../Clearing/OrbClearingMarkers/OrbCPath")]
+path_one_markers = [NodePath("../NightPath/PathNight/OrbNight1"), NodePath("../NightPath/PathNight/OrbNight2"), NodePath("../NightPath/PathNight/OrbNight3"), NodePath("../NightPath/PathNight/OrbNight4"), NodePath("../NightPath/PathNight/OrbNight5"), NodePath("../NightPath/PathNight/OrbNight6"), NodePath("../NightPath/PathNight/OrbNight7"), NodePath("../NightPath/PathNight/OrbNight8"), NodePath("../NightPath/PathNight/OrbNight9"), NodePath("../NightPath/PathNight/OrbNight10"), NodePath("../NightPath/PathNight/OrbNight11")]
 player = NodePath("../PlayerChild")
 
 [node name="Clearing" type="Node3D" parent="."]
@@ -98,20 +108,53 @@ shape = SubResource("CylinderShape3D_sr1r6")
 transform = Transform3D(0.927843, 0, 0.372972, 0, 1, 0, -0.372972, 0, 0.927843, -33.4676, 19.0635, -24.7816)
 script = ExtResource("8_33w2u")
 
-[node name="stick1" type="MeshInstance3D" parent="Clearing/Arrow"]
-transform = Transform3D(-8.75533e-10, -0.0780313, 0.0299383, 0.0360208, -6.13393e-09, 0, 1.30865e-09, 0.116632, 0.0200299, 0.309803, 0, -0.0173035)
-visible = false
-mesh = SubResource("CylinderMesh_r5iw5")
+[node name="MadeArrow" type="Node3D" parent="Clearing/Arrow"]
+unique_name_in_owner = true
 
-[node name="stick2" type="MeshInstance3D" parent="Clearing/Arrow"]
-transform = Transform3D(5.78904e-10, 0.0515944, 0.0334978, 0.0360208, -6.13393e-09, -1.79792e-17, 1.46423e-09, 0.130499, -0.0132438, 0.476273, 0, 0)
+[node name="stick1" type="MeshInstance3D" parent="Clearing/Arrow/MadeArrow"]
+transform = Transform3D(-8.75533e-10, -0.0780313, 0.0299383, 0.0360208, -6.13393e-09, 0, 1.30865e-09, 0.116632, 0.0200299, 0.309799, 0, -0.0172729)
 visible = false
 mesh = SubResource("CylinderMesh_r5iw5")
+skeleton = NodePath("../..")
 
-[node name="stick3" type="MeshInstance3D" parent="Clearing/Arrow"]
-transform = Transform3D(1.2863e-10, 0.0114641, 0.0359004, 0.0360208, -6.13393e-09, -1.79792e-17, 1.56926e-09, 0.139859, -0.00294271, 0.397881, 0, 0.196594)
+[node name="stick2" type="MeshInstance3D" parent="Clearing/Arrow/MadeArrow"]
+transform = Transform3D(5.78904e-10, 0.0515944, 0.0334978, 0.0360208, -6.13393e-09, -1.79792e-17, 1.46423e-09, 0.130499, -0.0132438, 0.476257, 0, 0)
 visible = false
 mesh = SubResource("CylinderMesh_r5iw5")
+skeleton = NodePath("../..")
+
+[node name="stick3" type="MeshInstance3D" parent="Clearing/Arrow/MadeArrow"]
+transform = Transform3D(1.2863e-10, 0.0114641, 0.0359004, 0.0360208, -6.13393e-09, -1.79792e-17, 1.56926e-09, 0.139859, -0.00294271, 0.397873, 0, 0.196594)
+visible = false
+mesh = SubResource("CylinderMesh_r5iw5")
+skeleton = NodePath("../..")
+
+[node name="BrokeArrow" type="Node3D" parent="Clearing/Arrow"]
+unique_name_in_owner = true
+visible = false
+
+[node name="stickb1" type="MeshInstance3D" parent="Clearing/Arrow/BrokeArrow"]
+transform = Transform3D(-1.56259e-09, -0.139264, 0.0044266, 0.0360208, -6.13393e-09, 5.31811e-17, 1.93497e-10, 0.0172449, 0.0357478, 0.12059, 0, -0.0932617)
+mesh = SubResource("CylinderMesh_r5iw5")
+skeleton = NodePath("../..")
+
+[node name="stickb2" type="MeshInstance3D" parent="Clearing/Arrow/BrokeArrow"]
+transform = Transform3D(1.50235e-09, 0.133896, -0.0107801, 0.0360208, -6.13393e-09, 2.35456e-17, -4.71213e-10, -0.0419965, -0.0343699, 0.476257, 0, 0)
+mesh = SubResource("CylinderMesh_r5iw5")
+skeleton = NodePath("../..")
+
+[node name="stickb3" type="MeshInstance3D" parent="Clearing/Arrow/BrokeArrow"]
+transform = Transform3D(-2.16138e-10, -0.0192631, 0.0356798, 0.0360208, -6.13393e-09, -2.79869e-17, 1.55962e-09, 0.139, 0.00494464, 0.250931, 0, 0.137543)
+mesh = SubResource("CylinderMesh_r5iw5")
+skeleton = NodePath("../..")
+
+[node name="SeeDadGoneArea" type="Area3D" parent="Clearing"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.4967, 19.4655, -24.8275)
+monitoring = false
+script = ExtResource("12_xt7f5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Clearing/SeeDadGoneArea"]
+shape = SubResource("CylinderShape3D_5vkaj")
 
 [node name="OrbClearingMarkers" type="Node3D" parent="Clearing"]
 transform = Transform3D(1, 0, -4.65661e-10, 0, 1, 0, 4.65661e-10, 0, 1, -32.0011, 19.1957, -24.799)
@@ -119,20 +162,19 @@ transform = Transform3D(1, 0, -4.65661e-10, 0, 1, 0, 4.65661e-10, 0, 1, -32.0011
 [node name="OrbC1" type="Marker3D" parent="Clearing/OrbClearingMarkers"]
 transform = Transform3D(0.970771, 0.240008, 1.36108e-11, -0.240008, 0.970771, 1.11762e-10, 1.36108e-11, -1.11762e-10, 1, -17.0478, 0.615682, 2.63254)
 
-[node name="OrbC2" type="Marker3D" parent="Clearing/OrbClearingMarkers"]
-transform = Transform3D(0.970771, 0.240008, 1.36108e-11, -0.240008, 0.970771, 1.11762e-10, 1.36108e-11, -1.11762e-10, 1, -18.8356, 0.615682, 0.507477)
-
-[node name="OrbC3" type="Marker3D" parent="Clearing/OrbClearingMarkers"]
-transform = Transform3D(0.970771, 0.240008, 1.36108e-11, -0.240008, 0.970771, 1.11762e-10, 1.36108e-11, -1.11762e-10, 1, -18.406, 0.615682, -5.5397)
-
-[node name="OrbC4" type="Marker3D" parent="Clearing/OrbClearingMarkers"]
-transform = Transform3D(0.970771, 0.240008, 1.36108e-11, -0.240008, 0.970771, 1.11762e-10, 1.36108e-11, -1.11762e-10, 1, -12.4517, 0.615682, -10.2838)
-
-[node name="OrbC5" type="Marker3D" parent="Clearing/OrbClearingMarkers"]
-transform = Transform3D(0.970771, 0.240008, 1.36108e-11, -0.240008, 0.970771, 1.11762e-10, 1.36108e-11, -1.11762e-10, 1, 15.5094, 0.615682, -10.2838)
+[node name="OrbCPath" type="Marker3D" parent="Clearing/OrbClearingMarkers"]
+transform = Transform3D(0.970771, 0.240008, 1.36108e-11, -0.240008, 0.970771, 1.11762e-10, 1.36108e-11, -1.11762e-10, 1, -4.28325, 0.615682, -16.7786)
 
 [node name="SittingLog" parent="Clearing" instance=ExtResource("8_my4o7")]
 transform = Transform3D(0.00462511, 0, 0.999989, 0, 1, 0, -0.999989, 0, 0.00462511, -32.0011, 19.1957, -24.799)
+
+[node name="ExitPathTrigger" type="Area3D" parent="Clearing"]
+transform = Transform3D(1, -5.0522e-20, -2.77556e-17, -5.0522e-20, 1, 6.93889e-18, 0, 0, 1, -36.2843, 19.8114, -41.5776)
+monitoring = false
+script = ExtResource("14_e0drn")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Clearing/ExitPathTrigger"]
+shape = SubResource("CylinderShape3D_v7he5")
 
 [node name="PlayerClearing" type="Marker3D" parent="Clearing"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.3382, 19.3624, -24.169)
@@ -283,6 +325,48 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -68.8123, 20.572, 27.6371)
 [node name="CheckM9" type="Marker3D" parent="FatherCheckPointsClearing"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -67.7029, 20.6232, 23.1653)
 
+[node name="NightPath" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -63.3242, -6.69215, 423.121)
+
+[node name="PlayerNightPath" type="Marker3D" parent="NightPath"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.18726, 16.2428, 18.7241)
+
+[node name="PathNight" type="Node3D" parent="NightPath"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.81354, 6.69215, -91.224)
+
+[node name="OrbNight1" type="Marker3D" parent="NightPath/PathNight"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.93058, 9.11879, 72.4208)
+
+[node name="OrbNight2" type="Marker3D" parent="NightPath/PathNight"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.95923, 9.41365, 62.6428)
+
+[node name="OrbNight3" type="Marker3D" parent="NightPath/PathNight"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.95923, 9.41365, 43.0775)
+
+[node name="OrbNight4" type="Marker3D" parent="NightPath/PathNight"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.2899, 9.41365, 17.1068)
+
+[node name="OrbNight5" type="Marker3D" parent="NightPath/PathNight"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.11031, 8.33666, 1.26755)
+
+[node name="OrbNight6" type="Marker3D" parent="NightPath/PathNight"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.0639, 7.484, -25.6363)
+
+[node name="OrbNight7" type="Marker3D" parent="NightPath/PathNight"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.2614, 7.484, -42.4689)
+
+[node name="OrbNight8" type="Marker3D" parent="NightPath/PathNight"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.773, 7.484, -50.5884)
+
+[node name="OrbNight9" type="Marker3D" parent="NightPath/PathNight"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.3475, 7.484, -64.1549)
+
+[node name="OrbNight10" type="Marker3D" parent="NightPath/PathNight"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.44439, 6.92463, -86.4208)
+
+[node name="OrbNight11" type="Marker3D" parent="NightPath/PathNight"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.28624, 6.92463, -92.7824)
+
 [node name="ClearingExit" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 2.72611, 0, 0, 0, 1, -59.4269, 9.13956, 430.202)
 mesh = SubResource("CapsuleMesh_cfc8h")
@@ -327,18 +411,8 @@ mesh = SubResource("CapsuleMesh_cfc8h")
 transform = Transform3D(1, 0, 0, 0, 2.72611, 0, 0, 0, 1, 55.5583, -17.8029, -747.058)
 mesh = SubResource("CapsuleMesh_cfc8h")
 
-[node name="PathNight" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.5107, 0, 331.897)
-
-[node name="OrbNight1" type="Marker3D" parent="PathNight"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.93058, 9.11879, 72.4208)
-
-[node name="OrbNight2" type="Marker3D" parent="PathNight"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.95923, 9.41365, 62.6428)
-
-[node name="OrbNight3" type="Marker3D" parent="PathNight"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.95923, 9.41365, 43.0775)
-
 [connection signal="body_entered" from="Clearing/StickDropArea" to="Clearing/StickDropArea" method="_on_body_entered"]
+[connection signal="body_entered" from="Clearing/SeeDadGoneArea" to="Clearing/SeeDadGoneArea" method="_on_body_entered"]
+[connection signal="body_entered" from="Clearing/ExitPathTrigger" to="Clearing/ExitPathTrigger" method="_on_body_entered"]
 [connection signal="body_entered" from="Ledge/ClimbedMound" to="Ledge/ClimbedMound" method="_on_body_entered"]
 [connection signal="body_entered" from="Ledge/DadSpeakArea" to="Ledge/DadSpeakArea" method="_on_body_entered"]

@@ -25,6 +25,14 @@ signal log_emit()
 
 signal clearing_trigger_orb()
 
+signal father_gone()
+
+signal orb_next_position()
+
+signal orb_sense_player(state)
+
+signal night_path_set_up()
+
 signal time_transition_0
 signal time_transition_1
 signal time_transition_2

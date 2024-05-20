@@ -40,22 +40,28 @@ var to_mound: bool = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	GlobalSignals.start_game.connect(_start_game)
 	GlobalSignals.dad_to_mound.connect(_dad_to_mound)
 	GlobalSignals.dad_to_clearing.connect(_dad_to_clearing)
 	GlobalSignals.start_clearing.connect(_start_clearing)
 	GlobalSignals.dad_repeat_log.connect(_dad_repeat_log)
+	GlobalSignals.father_gone.connect(_dad_gone)
 	use_check_points = check_points
 	$AnimationPlayer.play("mixamo_com")
 	$AnimationPlayer.pause()
+
+	#GlobalSignals.emit_signal("dad_to_mound")
+
+func _start_game():
 	get_tree().create_timer(4.0).timeout
 	_next_position()
 	_update_tree()
-	#GlobalSignals.emit_signal("dad_to_mound")
-
+	
 func _start_clearing():
 	walking = false
 	global_position = sitting_log.global_position
 	global_position.y -= 0.2
+	GlobalSignals.emit_signal("change_dad_max_dist", 20.0)
 	_sit_down()
 	
 
@@ -78,6 +84,11 @@ func _dad_repeat_log(state):
 	else:
 		%RepeatLogTimer.stop()
 
+
+func _dad_gone():
+	visible = false
+	walking = false
+	
 func _update_tree():
 	anim_tree["parameters/BlendTurn/blend_amount"] = turn_value
 	anim_tree["parameters/SitDown/blend_amount"] = sit_down_value
@@ -202,6 +213,7 @@ func _next_position():
 			GlobalSignals.emit_signal("dad_to_mound")
 		else:
 			_sit_down()
+			GlobalSignals.emit_signal("change_dad_max_dist", 20.0)
 			await get_tree().create_timer(3.0).timeout
 			GlobalSignals.emit_signal("show_speech", "Saif, find me 3 sticks. I want to show you something.")
 

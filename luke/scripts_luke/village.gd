@@ -8,6 +8,7 @@ func _ready() -> void:
 	GlobalSignals.emit_signal("start_game")
 	#GlobalSignals.emit_signal("dad_to_mound")
 	#GlobalSignals.emit_signal("start_clearing")
+	GlobalSignals.emit_signal("night_path_set_up")
 	#var tween = create_tween().parallel()
 	#tween.tween_property($WorldEnvironment, "environment:sky:sky_material:sky_top_color", Color("327085"), 2.0)
 	#tween.tween_property($WorldEnvironment, "environment:sky:sky_material:sky_horizon_color", Color("000000"), 2.0)
@@ -23,3 +24,6 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+
+
+

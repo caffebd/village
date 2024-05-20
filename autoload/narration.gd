@@ -10,6 +10,10 @@ var clearing_index:int = 4
 
 var orb_index: int = 6
 
+var dad_gone_index: int = 7
+
+var leave_clearing_index: int = 8
+
 var all_narration = [
 	["My dad was the only one who called me Saif instead of Saiful."],
 	["My dad always liked to take me on long walks through the forest...", "but that day we went further than we had ever been before."],
@@ -17,7 +21,9 @@ var all_narration = [
 	["For a second I panicked when I lost sight of my dad."],
 	["Dad always liked to teach me something when we went walking."],
 	["I suddenly realised I lost the 10 Taka note my dad gave me...", "I had to find it, otherwise he would be really upset."],
-	["While I was looking around, I saw something glowing...", "I wanted to show dad what I had found."]
+	["While I was looking around, I saw something glowing...", "I wanted to show dad what I had found."],
+	["Dad was gone. I looked around frantically but he was nowhere to be seen.", "I had to find him."],
+	["At the time, I felt I had to follow that orb."]
 ]
 
 func narrate():
