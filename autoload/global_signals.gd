@@ -33,6 +33,10 @@ signal orb_sense_player(state)
 
 signal night_path_set_up()
 
+signal fork_set_up()
+
+signal dad_call(count)
+
 signal time_transition_0
 signal time_transition_1
 signal time_transition_2

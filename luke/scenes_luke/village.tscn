@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://qgbj73vixll4"]
+[gd_scene load_steps=36 format=3 uid="uid://qgbj73vixll4"]
 
 [ext_resource type="Script" path="res://luke/scripts_luke/village.gd" id="1_52nm1"]
 [ext_resource type="PackedScene" uid="uid://ds8jitdfn8yuj" path="res://assets/path.tscn" id="2_7n3rm"]
@@ -17,6 +17,10 @@
 [ext_resource type="Script" path="res://luke/scripts_luke/dad_speak_area.gd" id="14_1i5ef"]
 [ext_resource type="Script" path="res://luke/scripts_luke/exit_path_trigger.gd" id="14_e0drn"]
 [ext_resource type="PackedScene" uid="uid://doxkrnuvvwqhc" path="res://luke/scenes_luke/PlayerChild.tscn" id="14_k0c81"]
+[ext_resource type="AudioStream" uid="uid://tgrrdeuedo2w" path="res://luke/assets_luke/audio_luke/dad_saiful_temp.mp3" id="18_ebsws"]
+[ext_resource type="Script" path="res://luke/scripts_luke/fork_area.gd" id="18_xmxnm"]
+[ext_resource type="Script" path="res://luke/scripts_luke/dad_voice.gd" id="19_od4ut"]
+[ext_resource type="FontFile" uid="uid://duirhuy7klyp8" path="res://assets/fonts/alagard.ttf" id="20_or1ta"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_sr1r6"]
 height = 1.385
@@ -43,7 +47,268 @@ size = Vector3(6.67, 0.565, 0.65)
 [sub_resource type="BoxShape3D" id="BoxShape3D_j1mdo"]
 size = Vector3(12.305, 1, 1)
 
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_l7tdc"]
+radius = 3.295
+
+[sub_resource type="Animation" id="Animation_t3n88"]
+resource_name = "expand"
+length = 1.6
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SaifulLabel:modulate:r")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1.1, 1.6)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SaifulLabel:modulate:g")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1.1, 1.6)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SaifulLabel:modulate:b")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1.1, 1.6)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SaifulLabel:modulate:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1.1, 1.6)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("SaifulLabel:scale:x")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 2, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1.6)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("SaifulLabel:scale:y")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 2, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1.6)
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("SaifulLabel:scale:z")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 2, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1.6)
+}
+tracks/7/type = "bezier"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("SaifulLabel:outline_modulate:r")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5, 1.6)
+}
+tracks/8/type = "bezier"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("SaifulLabel:outline_modulate:g")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5, 1.6)
+}
+tracks/9/type = "bezier"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("SaifulLabel:outline_modulate:b")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5, 1.6)
+}
+tracks/10/type = "bezier"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("SaifulLabel:outline_modulate:a")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5, 1.6)
+}
+
+[sub_resource type="Animation" id="Animation_yyfu4"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SaifulLabel:modulate:r")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SaifulLabel:modulate:g")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SaifulLabel:modulate:b")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SaifulLabel:modulate:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("SaifulLabel:scale:x")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("SaifulLabel:scale:y")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("SaifulLabel:scale:z")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/7/type = "bezier"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("SaifulLabel:outline_modulate:r")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/8/type = "bezier"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("SaifulLabel:outline_modulate:g")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/9/type = "bezier"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("SaifulLabel:outline_modulate:b")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/10/type = "bezier"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("SaifulLabel:outline_modulate:a")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dn74t"]
+_data = {
+"RESET": SubResource("Animation_yyfu4"),
+"expand": SubResource("Animation_t3n88")
+}
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tqgou"]
+albedo_color = Color(0, 1, 1, 1)
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_cfc8h"]
 material = SubResource("StandardMaterial3D_tqgou")
@@ -61,7 +326,7 @@ script = ExtResource("1_52nm1")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.34267, 0)
 visible = false
 
-[node name="PlayerChild" parent="." node_paths=PackedStringArray("attack_marker", "rotate_marker", "lunge_marker", "father", "start_mound_marker", "start_clearing_marker", "start_night_path_marker") instance=ExtResource("14_k0c81")]
+[node name="PlayerChild" parent="." node_paths=PackedStringArray("attack_marker", "rotate_marker", "lunge_marker", "father", "start_mound_marker", "start_clearing_marker", "start_night_path_marker", "start_fork_marker") instance=ExtResource("14_k0c81")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.7541, 2.08273, 592.364)
 attack_marker = NodePath("Head/PlayerCam/AttackMarker")
 rotate_marker = NodePath("RotateMarker")
@@ -70,6 +335,7 @@ father = NodePath("../Father")
 start_mound_marker = NodePath("../Ledge/PlayerToMound")
 start_clearing_marker = NodePath("../Clearing/PlayerClearing")
 start_night_path_marker = NodePath("../NightPath/PlayerNightPath")
+start_fork_marker = NodePath("../NightPath/PlayerFork")
 
 [node name="Father" parent="." node_paths=PackedStringArray("check_points", "clearing_check_points", "player", "top_mound_marker", "sitting_log") instance=ExtResource("4_ik3vd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.8218, 0.885342, 584.845)
@@ -335,44 +601,77 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.18726, 16.2428, 18.7241)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.81354, 6.69215, -91.224)
 
 [node name="OrbNight1" type="Marker3D" parent="NightPath/PathNight"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.93058, 9.11879, 72.4208)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.93058, 8.72687, 72.4208)
 
 [node name="OrbNight2" type="Marker3D" parent="NightPath/PathNight"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.95923, 9.41365, 62.6428)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.95923, 7.96542, 62.6428)
 
 [node name="OrbNight3" type="Marker3D" parent="NightPath/PathNight"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.95923, 9.41365, 43.0775)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.95923, 7.8537, 43.0775)
 
 [node name="OrbNight4" type="Marker3D" parent="NightPath/PathNight"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.2899, 9.41365, 17.1068)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.2899, 7.12669, 17.1068)
 
 [node name="OrbNight5" type="Marker3D" parent="NightPath/PathNight"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.11031, 8.33666, 1.26755)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.62765, 6.35469, -6.40912)
 
 [node name="OrbNight6" type="Marker3D" parent="NightPath/PathNight"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.0639, 7.484, -25.6363)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.0639, 7.39867, -25.6363)
 
 [node name="OrbNight7" type="Marker3D" parent="NightPath/PathNight"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.2614, 7.484, -42.4689)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.2614, 6.87051, -50.9635)
 
 [node name="OrbNight8" type="Marker3D" parent="NightPath/PathNight"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.773, 7.484, -50.5884)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.0588, 6.7399, -67.6462)
 
 [node name="OrbNight9" type="Marker3D" parent="NightPath/PathNight"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.3475, 7.484, -64.1549)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.2144, 6.95666, -78.0541)
 
 [node name="OrbNight10" type="Marker3D" parent="NightPath/PathNight"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.44439, 6.92463, -86.4208)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.44439, 6.68414, -86.4208)
 
 [node name="OrbNight11" type="Marker3D" parent="NightPath/PathNight"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.28624, 6.92463, -92.7824)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.28624, 6.5725, -92.7824)
+
+[node name="PlayerFork" type="Marker3D" parent="NightPath"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.31841, 13.8327, -172.982)
+
+[node name="ForkArea" type="Area3D" parent="NightPath"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.9407, 12.2964, -177.274)
+script = ExtResource("18_xmxnm")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NightPath/ForkArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.353807, 0)
+shape = SubResource("CylinderShape3D_l7tdc")
+
+[node name="VoicePathOne" type="Node3D" parent="."]
+
+[node name="DadVoice" type="AudioStreamPlayer3D" parent="VoicePathOne" node_paths=PackedStringArray("player")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.2034, 6.90271, 236.126)
+stream = ExtResource("18_ebsws")
+volume_db = 5.0
+script = ExtResource("19_od4ut")
+player = NodePath("../../PlayerChild")
+
+[node name="SaifulLabel" type="Label3D" parent="VoicePathOne/DadVoice"]
+transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, -0.0171356, 0, 1.26886)
+modulate = Color(1, 1, 1, 0)
+outline_modulate = Color(0, 0, 0, 0)
+text = "SAIFUL"
+font = ExtResource("20_or1ta")
+font_size = 80
+
+[node name="SaifulTextAnim" type="AnimationPlayer" parent="VoicePathOne/DadVoice"]
+libraries = {
+"": SubResource("AnimationLibrary_dn74t")
+}
 
 [node name="ClearingExit" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 2.72611, 0, 0, 0, 1, -59.4269, 9.13956, 430.202)
 mesh = SubResource("CapsuleMesh_cfc8h")
 
 [node name="ChoiceFork" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 2.72611, 0, 0, 0, 1, -59.4269, 9.13956, 256.028)
+transform = Transform3D(1, 0, 0, 0, 2.72611, 0, 0, 0, 1, -51.8689, 5.0495, 246.467)
 mesh = SubResource("CapsuleMesh_cfc8h")
 
 [node name="Cave" type="MeshInstance3D" parent="."]
@@ -416,3 +715,4 @@ mesh = SubResource("CapsuleMesh_cfc8h")
 [connection signal="body_entered" from="Clearing/ExitPathTrigger" to="Clearing/ExitPathTrigger" method="_on_body_entered"]
 [connection signal="body_entered" from="Ledge/ClimbedMound" to="Ledge/ClimbedMound" method="_on_body_entered"]
 [connection signal="body_entered" from="Ledge/DadSpeakArea" to="Ledge/DadSpeakArea" method="_on_body_entered"]
+[connection signal="body_entered" from="NightPath/ForkArea" to="NightPath/ForkArea" method="_on_body_entered"]

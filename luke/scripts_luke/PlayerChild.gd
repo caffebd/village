@@ -36,6 +36,7 @@ var constant_wobble:bool = false
 @export var start_mound_marker: Marker3D
 @export var start_clearing_marker: Marker3D
 @export var start_night_path_marker: Marker3D
+@export var start_fork_marker: Marker3D
 
 @export var throwForce = 0.3
 @export var followSpeed = 10.0
@@ -82,6 +83,7 @@ func _ready():
 	GlobalSignals.clearing_trigger_orb.connect(_clearing_trigger_orb)
 	GlobalSignals.father_gone.connect(_father_gone)
 	GlobalSignals.night_path_set_up.connect(_night_path_set_up)
+	GlobalSignals.fork_set_up.connect(_fork_set_up)
 	#GlobalSignals.dad_to_mound.connect(_start_mound)
 	head.rotation_degrees.y = 0.0
 	last_distance = global_position.distance_to(father.global_position)
@@ -106,6 +108,12 @@ func _night_path_set_up():
 	can_trigger_orb = false
 	GlobalSignals.emit_signal("father_gone")
 	global_position = start_night_path_marker.global_position
+
+func _fork_set_up():
+	following_dad = false
+	can_trigger_orb = false
+	GlobalSignals.emit_signal("father_gone")
+	global_position = start_fork_marker.global_position
 							
 func _input(event):
 	if event is InputEventMouseMotion:
@@ -126,6 +134,8 @@ func _input(event):
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	if Input.is_action_just_pressed("torch"):
 		%SpotLight3D.visible = !%SpotLight3D.visible
+	if Input.is_action_just_pressed("dad_call"):
+		GlobalSignals.emit_signal("dad_call")
 
 
 func _controller_support():
