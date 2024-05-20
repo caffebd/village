@@ -208,15 +208,21 @@ func _next_position():
 func _check_for_narration(check_point: String):
 	match check_point:
 		"Check10":
-			GlobalSignals.emit_signal("show_narration", "My dad was the only one who called me Saif instead of Saiful.")
+			Narration.narrate()
+			#GlobalSignals.emit_signal("show_narration", "My dad was the only one who called me Saif instead of Saiful.")
 		"Check15":
-			GlobalSignals.emit_signal("show_narration", "My dad always liked to take me on long walks through the forest...")
+			Narration.narrate()
+			#GlobalSignals.emit_signal("show_narration", "My dad always liked to take me on long walks through the forest...")
 		"Check18":
-			GlobalSignals.emit_signal("show_narration", "but that day we went further than we had ever been before.")
+			Narration.narrate()
+			#GlobalSignals.emit_signal("show_narration", "but that day we went further than we had ever been before.")
 		"Check23":
 			GlobalSignals.emit_signal("change_dad_max_dist", 18.5)
 		"CheckEnd":
-			GlobalSignals.emit_signal("show_narration", "For a second I panicked when I lost sight of my dad.")
+			Narration.main_index = Narration.corner_index
+			Narration.sub_index = 0
+			Narration.narrate()
+			#GlobalSignals.emit_signal("show_narration", "For a second I panicked when I lost sight of my dad.")
 
 
 func _on_walk_timer_timeout() -> void:

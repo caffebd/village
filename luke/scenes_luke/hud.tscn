@@ -347,6 +347,47 @@ text = "narraot text"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="InfoToPlayer" type="ColorRect" parent="."]
+unique_name_in_owner = true
+auto_translate_mode = 1
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -780.0
+offset_top = -427.5
+offset_right = 780.0
+offset_bottom = -314.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.89, 0.89, 0.89, 1)
+
+[node name="InfoToPlayerText" type="Label" parent="InfoToPlayer"]
+unique_name_in_owner = true
+auto_translate_mode = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -93.0
+offset_top = -48.0
+offset_right = 93.0
+offset_bottom = 48.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 12
+theme_override_fonts/font = ExtResource("4_qs75q")
+theme_override_font_sizes/font_size = 30
+text = "narraot text"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="TopLid" type="ColorRect" parent="."]
 layout_mode = 0
 offset_top = -560.0

@@ -15,6 +15,9 @@ signal hide_speech()
 signal show_narration(text)
 signal hide_narration()
 
+signal show_player_info(text)
+signal hide_player_info()
+
 signal change_dad_max_dist(dist)
 
 signal dad_repeat_log(state)

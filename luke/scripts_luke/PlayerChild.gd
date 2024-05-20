@@ -68,9 +68,9 @@ var joy_rotate_y : float = 0.0
 
 var last_distance: float = 0.0
 
-var following_dad: bool = false
+var following_dad: bool = true
 
-var can_trigger_orb: bool = false
+var can_trigger_orb: bool = true
 
 #end head wobble settings
 
@@ -85,9 +85,11 @@ func _ready():
 	
 
 func _start_mound():
+	Narration.main_index = Narration.mound_index
 	global_position = start_mound_marker.global_position
 
 func _start_clearing():
+	Narration.main_index = Narration.clearing_index
 	global_position = start_clearing_marker.global_position
 
 func _clearing_trigger_orb():
@@ -151,7 +153,7 @@ func _physics_process(delta):
 		#print (dist)
 		if dist > max_dad_dist:
 			if not too_far:
-				GlobalSignals.emit_signal("show_narration", "I didn't want to go too far from dad.")
+				GlobalSignals.emit_signal("show_player_info", "I didn't want to go too far from dad.")
 			too_far = true
 			speed = 0.75
 			if dist > max_dad_dist + 1:
@@ -159,6 +161,8 @@ func _physics_process(delta):
 			if dist < last_distance:
 				speed = 1.5
 		else:
+			if too_far:
+				GlobalSignals.emit_signal("hide_player_info")
 			speed = 2.0
 			too_far = false
 		
@@ -249,11 +253,14 @@ func _hud_target():
 			hud.target.modulate = Color(1,1,1,1)
 		else:
 			hud.target.modulate = Color(1,1,1,0.2)
-		print (collider.name)
-		if collider.is_in_group("orb"):
+		#print (collider.name)
+		if collider.is_in_group("orb") and can_trigger_orb:
 			collider.orb_collider.set_deferred("disabled", true)
 			can_trigger_orb = false
-			GlobalSignals.emit_signal("show_narration", "While I was looking, I saw something glowing.")
+			Narration.main_index = Narration.orb_index
+			Narration.sub_index = 0
+			Narration.narrate()
+			#GlobalSignals.emit_signal("show_narration", "While I was looking, I saw something glowing.")
 			await get_tree().create_timer(5.0).timeout
 			collider.sense_player = true
 	else:
